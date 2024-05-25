@@ -11,8 +11,9 @@ export const navItems = [
     path: "/work",
     label: "work",
   },
+
   {
-    path: "/contant",
-    label: "contant",
+    path: "/contact",
+    label: "contact",
   },
-];
+].map((n, idx) => ({ ...n, id: idx + 1 }));
