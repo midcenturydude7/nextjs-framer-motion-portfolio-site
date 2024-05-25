@@ -1,3 +1,4 @@
+import Header from "./components/Header";
 import "./globals.css";
 
 export const metadata = {
@@ -12,6 +13,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/rgm1dlw.css" />
       </head>
       <body className="bg-slate-900 font-[sofia-pro,_sans-serif] font-medium not-italic antialiased">
+        <Header />
         {children}
       </body>
     </html>
