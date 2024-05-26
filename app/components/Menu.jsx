@@ -44,7 +44,7 @@ export default function Menu() {
                     className="absolute bottom-[1px] left-[-15px] right-[0] z-0 h-[110%] w-[110%] rounded-[8px] bg-[#23272F]"
                     transition={{
                       layout: {
-                        duration: 0.2,
+                        duration: 0.4,
                         ease: "easeOut",
                       },
                     }}

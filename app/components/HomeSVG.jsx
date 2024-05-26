@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HomeSVG() {
   return (
-    <div className="absolute left-[-6px] top-[0] z-10">
+    <div className="absolute left-[-6px] top-[1px] z-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

@@ -1,6 +1,6 @@
 export default function WorkSVG() {
   return (
-    <div className="absolute left-[-2px] top-[2px] z-10">
+    <div className="absolute left-[-2px] top-[4px] z-10">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
