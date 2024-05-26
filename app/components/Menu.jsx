@@ -31,7 +31,7 @@ export default function Menu() {
                 tabIndex={0}
                 className={`group relative h-[35px] w-[90px] text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
               >
-                <span className="transition-colors group-hover:duration-1000">
+                <span className="stroke-2 transition-colors group-hover:duration-1000">
                   {svg}
                 </span>
                 <span
@@ -41,7 +41,7 @@ export default function Menu() {
                 </span>
                 {focused === path ? (
                   <motion.div
-                    className="absolute bottom-[1px] left-[-15px] right-[0] z-0 h-[110%] w-[110%] rounded-[8px] bg-[#23272F]"
+                    className="absolute bottom-[1px] left-[-18px] right-[0] z-0 h-[110%] w-[120%] rounded-[8px] bg-[#23272F]"
                     transition={{
                       layout: {
                         duration: 0.4,
@@ -53,7 +53,7 @@ export default function Menu() {
                 ) : null}
                 {selected === path ? (
                   <motion.div
-                    className="absolute bottom-[-7px] left-[-9px] right-[0] z-0 h-[4px] w-[100%] rounded-[8px] bg-[#393f49]/70 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
+                    className="absolute bottom-[-7px] left-[-13px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/70 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
                     layoutId="underline"
                   />
                 ) : null}

@@ -2,6 +2,7 @@ import HomeSVG from "../components/HomeSVG";
 import AboutSVG from "../components/AboutSVG";
 import ContactSVG from "../components/ContactSVG";
 import WorkSVG from "../components/WorkSVG";
+import ResourcesSVG from "../components/ResourcesSVG";
 
 export const navItems = [
   {
@@ -18,6 +19,11 @@ export const navItems = [
     svg: <WorkSVG />,
     path: "/work",
     label: "work",
+  },
+  {
+    svg: <ResourcesSVG />,
+    path: "/resources",
+    label: "resources",
   },
 
   {
