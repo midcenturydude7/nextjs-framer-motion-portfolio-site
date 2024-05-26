@@ -31,7 +31,7 @@ export default function Menu() {
                 tabIndex={0}
                 className={`group relative h-[35px] w-[90px] text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
               >
-                <span className="stroke-2 transition-colors group-hover:duration-1000">
+                <span className="stroke-1 transition-colors group-hover:stroke-2 group-hover:duration-1000">
                   {svg}
                 </span>
                 <span

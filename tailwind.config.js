@@ -12,6 +12,10 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      strokeWidth: {
+        1: "1.5px",
+        2: "2px",
+      },
     },
     animation: {
       tilt: "tilt 10s infinite linear",
