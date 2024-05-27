@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import { navItems } from "../lib/navItems";
+import MenuButton from "./MenuButton";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function Menu() {
   const pathname = usePathname();
@@ -11,10 +9,17 @@ export default function Menu() {
   const [focused, setFocused] = React.useState(null);
 
   return (
-    <nav onMouseLeave={() => setFocused(null)} className="group relative">
+    <nav onPointerLeave={() => setFocused(null)} className="group relative">
       <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100"></div>
 
-      <div className="relative flex gap-6 rounded-lg border border-transparent bg-zinc-900/90 pb-[0.4rem] pl-[1.9rem] pr-[.55rem] pt-[1rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
+      <MenuButton
+        selected={selected}
+        setSelected={setSelected}
+        focused={focused}
+        setFocused={setFocused}
+      />
+
+      {/* <div className="relative flex gap-6 rounded-lg border border-transparent bg-zinc-900/90 pb-[0.4rem] pl-[1.9rem] pr-[.55rem] pt-[1rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
         {navItems.map(({ svg, path, id, label }) => {
           const isActive = path === pathname;
           return (
@@ -41,7 +46,7 @@ export default function Menu() {
                 </span>
                 {focused === path ? (
                   <motion.div
-                    className="absolute bottom-[1px] left-[-20px] right-[0] z-0 h-[110%] w-[120%] rounded-[8px] bg-[#23272F]"
+                    className="absolute bottom-[1px] left-[-20px] right-[0] z-0 h-[110%] w-[120%] rounded-[8px] bg-[rgba(57,63,73,0.75)]"
                     transition={{
                       layout: {
                         duration: 0.4,
@@ -61,7 +66,7 @@ export default function Menu() {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </nav>
   );
 }
