@@ -1,7 +1,7 @@
 import { navItems } from "../lib/navItems";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function MenuButton({
   selected,
@@ -35,18 +35,27 @@ export default function MenuButton({
               >
                 {label}
               </span>
-              {focused === path ? (
-                <motion.div
-                  className="absolute bottom-[1px] left-[-20px] right-[0] z-0 h-[110%] w-[120%] rounded-[8px] bg-[rgba(57,63,73,0.75)]"
-                  transition={{
-                    layout: {
-                      duration: 0.4,
-                      ease: "easeOut",
-                    },
-                  }}
-                  layoutId="highlight"
-                />
-              ) : null}
+              <AnimatePresence>
+                {focused === path ? (
+                  <motion.div
+                    className="absolute bottom-[1px] left-[-20px] right-[0] z-0 h-[110%] w-[120%] rounded-[8px] bg-[rgba(57,63,73,0.75)]"
+                    transition={{
+                      layout: {
+                        duration: 0.4,
+                        ease: "easeOut",
+                      },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.75,
+                        ease: "easeOut",
+                      },
+                    }}
+                    layoutId="highlight"
+                  />
+                ) : null}
+              </AnimatePresence>
               {selected === path ? (
                 <motion.div
                   className="absolute bottom-[-7px] left-[-15px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/70 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
