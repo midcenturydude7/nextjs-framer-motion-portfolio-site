@@ -56,12 +56,37 @@ export default function MenuButton({
                   />
                 ) : null}
               </AnimatePresence>
-              {selected === path ? (
-                <motion.div
-                  className="absolute bottom-[-7px] left-[-15px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/70 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
-                  layoutId="underline"
-                />
-              ) : null}
+              <AnimatePresence>
+                {selected === path ? (
+                  <motion.div
+                    className="absolute bottom-[-7px] left-[-15px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/75 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
+                    // transition={{
+                    //   layout: {
+                    //     duration: 0.4,
+                    //     ease: "easeOut",
+                    //   },
+                    // }}
+                    // exit={{
+                    //   animate: {
+                    //     backgroundColor: "#393F49",
+                    //   },
+                    //   transition: {
+                    //     duration: 0.75,
+                    //     ease: "easeOut",
+                    //     animate: { backgroundColor: "#393F49" },
+                    //   },
+                    // }}
+                    // animate={{
+                    //   backgroundColor: "#393F49",
+                    //   transition: {
+                    //     duration: 0.75,
+                    //     ease: "easeOut",
+                    //   },
+                    // }}
+                    layoutId="underline"
+                  />
+                ) : null}
+              </AnimatePresence>
             </button>
           </Link>
         );
