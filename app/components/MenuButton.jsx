@@ -25,7 +25,7 @@ export default function MenuButton({
               onFocus={() => setFocused(path)}
               onMouseEnter={() => setFocused(path)}
               tabIndex={0}
-              className={`group relative h-[35px] w-[90px] text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
+              className={`relative h-[35px] w-[90px] text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
             >
               <span className="stroke-1 transition-colors group-hover:stroke-2 group-hover:duration-1000">
                 {svg}
@@ -59,30 +59,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {selected === path ? (
                   <motion.div
-                    className="absolute bottom-[-7px] left-[-15px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/75 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
-                    // transition={{
-                    //   layout: {
-                    //     duration: 0.4,
-                    //     ease: "easeOut",
-                    //   },
-                    // }}
-                    // exit={{
-                    //   animate: {
-                    //     backgroundColor: "#393F49",
-                    //   },
-                    //   transition: {
-                    //     duration: 0.75,
-                    //     ease: "easeOut",
-                    //     animate: { backgroundColor: "#393F49" },
-                    //   },
-                    // }}
-                    // animate={{
-                    //   backgroundColor: "#393F49",
-                    //   transition: {
-                    //     duration: 0.75,
-                    //     ease: "easeOut",
-                    //   },
-                    // }}
+                    className="absolute bottom-[-7px] left-[-15px] right-[0] z-0 h-[4px] w-[110%] rounded-[8px] bg-[#393f49]/75 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600"
                     layoutId="underline"
                   />
                 ) : null}
