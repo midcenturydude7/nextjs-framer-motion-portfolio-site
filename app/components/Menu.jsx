@@ -10,7 +10,7 @@ export default function Menu() {
 
   return (
     <nav onPointerLeave={() => setFocused(null)} className="group relative">
-      <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100"></div>
+      <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100" />
 
       <MenuButton
         selected={selected}
