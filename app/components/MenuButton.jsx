@@ -17,7 +17,8 @@ export default function MenuButton({
         const isActive = path === pathname;
         return (
           <Link key={id} href={path}>
-            <button
+            <motion.button
+              layout
               data-active={isActive}
               onClick={() => setSelected(path)}
               onKeyDown={(e) => (e.key === "Enter" ? setSelected(path) : null)}
@@ -63,7 +64,7 @@ export default function MenuButton({
                   />
                 ) : null}
               </AnimatePresence>
-            </button>
+            </motion.button>
           </Link>
         );
       })}
