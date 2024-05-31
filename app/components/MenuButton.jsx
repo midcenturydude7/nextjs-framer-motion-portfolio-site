@@ -18,7 +18,6 @@ export default function MenuButton({
         return (
           <Link key={id} href={path}>
             <button
-              key={id}
               data-active={isActive}
               onClick={() => setSelected(path)}
               onKeyDown={(e) => (e.key === "Enter" ? setSelected(path) : null)}
