@@ -30,6 +30,6 @@ export const navIcons = [
   {
     label: "linkedin",
     icon: FaLinkedinIn,
-    url: "https://github.com/midcenturydude7",
+    url: "https://www.linkedin.com/in/matthewgriffes/",
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));

@@ -25,7 +25,7 @@ export default function MenuButton({
               onFocus={() => setFocused(path)}
               onMouseEnter={() => setFocused(path)}
               tabIndex={0}
-              className={`relative h-[35px] w-[90px] text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
+              className={`relative h-[37px] w-[90px] rounded-lg bg-zinc-900/90 text-[#E8E8FD]/50 outline-[none] ${selected === path ? "cursor-default hover:text-[#E8E8FD]/50" : "cursor-pointer hover:text-purple-200/90"}`}
             >
               <span className="stroke-1 transition-colors group-hover:stroke-2 group-hover:duration-1000">
                 {svg}
