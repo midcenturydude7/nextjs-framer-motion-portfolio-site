@@ -18,7 +18,7 @@ export default function Icons() {
               onFocus={() => setCircle(label)}
               onMouseEnter={() => setCircle(label)}
               tabIndex={0}
-              className={`relative h-[35px] w-[35px] cursor-pointer rounded-full bg-slate-900 px-5 py-5 text-[1.25rem] text-[#E8E8FD]/50 outline-none transition-colors duration-1000 hover:text-purple-200/90 hover:duration-1000`}
+              className={`relative h-[35px] w-[35px] cursor-pointer rounded-full bg-slate-900 px-5 py-5 text-[1.25rem] text-[#E8E8FD]/50 outline-none transition-colors group-hover:duration-1000 hover:text-purple-200/90 hover:duration-1000`}
             >
               <span className="absolute inset-[10px] z-10">
                 <Icon />
