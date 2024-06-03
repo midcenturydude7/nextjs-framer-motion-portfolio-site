@@ -13,7 +13,8 @@ export default function Icons() {
       <div className="relative flex gap-3 rounded-lg border border-transparent bg-zinc-900/90 px-[1.25rem] py-[0.475rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
         {navIcons.map(({ icon: Icon, url, id, label }) => (
           <Link key={id} href={url} target="_noblank">
-            <button
+            <motion.button
+              layoutf
               onKeyDown={(e) => (e.key === "Enter" ? setCircle(label) : null)}
               onFocus={() => setCircle(label)}
               onMouseEnter={() => setCircle(label)}
@@ -44,7 +45,7 @@ export default function Icons() {
                   />
                 ) : null}
               </AnimatePresence>
-            </button>
+            </motion.button>
           </Link>
         ))}
       </div>
