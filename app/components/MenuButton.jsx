@@ -26,7 +26,7 @@ export default function MenuButton({
               onFocus={() => setFocused(path)}
               onMouseEnter={() => setFocused(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-slate-700/50 transition-colors duration-1000 hover:text-[#E8E8FD]/50 group-hover:bg-[rgba(57,63,73,0.75)]" : "cursor-pointer hover:text-purple-200/90"}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-slate-700/40 text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70 group-hover:bg-slate-700/40" : "cursor-pointer hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors group-hover:stroke-2">
                 {svg}
