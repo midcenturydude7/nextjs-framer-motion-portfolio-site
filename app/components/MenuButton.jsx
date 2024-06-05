@@ -26,9 +26,9 @@ export default function MenuButton({
               onKeyDown={(e) => (e.key === "Enter" ? setSelected(path) : null)}
               onFocus={() => setFocused(path)}
               onMouseEnter={() => setFocused(path)}
-              onMouseDown={() => setBackground(path)}
+              onMouseUp={() => setBackground(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "cursor-default text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "cursor-pointer hover:text-purple-200/90"} ${background === path ? "bg-[rgba(94,106,130,0.5)] group-hover:bg-[rgba(88,104,137,0.5)]" : ""}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "cursor-default text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "cursor-pointer hover:text-purple-200/90"} ${background === path ? "bg-slate-700/50 group-hover:bg-slate-700/50" : ""}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors group-hover:stroke-2">
                 {svg}
@@ -41,7 +41,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
-                    className="absolute inset-0 z-0 h-[100%] w-[100%] rounded-[8px] bg-slate-700/50"
+                    className="absolute inset-0 z-0 h-[100%] w-[100%] rounded-[8px] bg-slate-700/50 transition-colors"
                     transition={{
                       layout: {
                         duration: 0.4,
@@ -63,11 +63,11 @@ export default function MenuButton({
                 {selected === path ? (
                   <>
                     <motion.div
-                      className="absolute bottom-[-10px] left-0 z-0 h-[4px] w-[100%] rounded-[8px] bg-[rgba(94,106,130,0.4)] transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600"
+                      className="absolute bottom-[-10px] left-0 z-0 h-[4px] w-[100%] rounded-[8px] bg-slate-700/50 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600"
                       layoutId="underline"
                     />
                     <motion.div
-                      className="absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-1000 group-hover:bg-slate-700/50"
+                      className="absolute inset-0 z-0 rounded-[8px] bg-slate-700/40 transition-colors group-hover:bg-slate-700/50"
                       layoutId="highlight"
                     />
                   </>
