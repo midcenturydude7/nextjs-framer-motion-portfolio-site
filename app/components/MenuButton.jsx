@@ -28,13 +28,13 @@ export default function MenuButton({
               onMouseEnter={() => setFocused(path)}
               onPointerUp={() => setBackground(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "bg-slate/700/50 cursor-default text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "bg-slate/700/50 cursor-default text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
               </span>
               <span
-                className={`z-10 select-none pl-[1rem] text-[1rem] hover:duration-500`}
+                className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-500`}
               >
                 {label}
               </span>
@@ -67,7 +67,20 @@ export default function MenuButton({
                       layoutId="underline"
                     />
                     <motion.div
-                      className={`absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-100 ${background === path ? "bg-slate-700/50" : "bg-slate-700/50"}`}
+                      className={`absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-500`}
+                      transition={{
+                        layout: {
+                          duration: 0.4,
+                          ease: "easeOut",
+                        },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        transition: {
+                          duration: 0.75,
+                          ease: "easeOut",
+                        },
+                      }}
                       layoutId="highlight"
                     />
                   </>
