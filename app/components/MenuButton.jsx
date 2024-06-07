@@ -26,22 +26,22 @@ export default function MenuButton({
               onKeyDown={(e) => (e.key === "Enter" ? setSelected(path) : null)}
               onFocus={() => setFocused(path)}
               onMouseEnter={() => setFocused(path)}
-              onMouseUp={() => setBackground(path)}
+              onPointerUp={() => setBackground(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-transparent text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "duration-400 cursor-pointer transition-colors hover:text-purple-200/90"}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-lg group-hover:bg-slate-900/50 ${selected === path ? "bg-slate/700/50 cursor-default text-[#fad4fe]/70 transition-colors duration-1000 hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
               </span>
               <span
-                className={`z-10 select-none pl-[1rem] text-[1rem] transition-colors hover:duration-500`}
+                className={`z-10 select-none pl-[1rem] text-[1rem] hover:duration-500`}
               >
                 {label}
               </span>
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
-                    className="absolute inset-0 z-0 h-[100%] w-[100%] rounded-[8px] bg-slate-700/50 transition-colors"
+                    className={`absolute inset-0 z-0 h-[100%] w-[100%] rounded-[8px] bg-slate-700/50 ${background === path ? "bg-slate-700/50" : ""}`}
                     transition={{
                       layout: {
                         duration: 0.4,
@@ -67,18 +67,12 @@ export default function MenuButton({
                       layoutId="underline"
                     />
                     <motion.div
-                      className="absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-100"
+                      className={`absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-100 ${background === path ? "bg-slate-700/50" : "bg-slate-700/50"}`}
                       layoutId="highlight"
                     />
                   </>
                 ) : null}
               </AnimatePresence>
-              {/* {background === path ? (
-                <motion.div
-                  className="bg-slate-700/50 group-hover:bg-slate-700/50"
-                  layout
-                />
-              ) : null} */}
             </button>
           </Link>
         );
