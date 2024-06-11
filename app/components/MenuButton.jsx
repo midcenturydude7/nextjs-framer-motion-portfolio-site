@@ -10,9 +10,10 @@ export default function MenuButton({
   setSelected,
   focused,
   setFocused,
+  background,
+  setBackground,
 }) {
   const pathname = usePathname();
-  const [background, setBackground] = React.useState(null);
 
   return (
     <div className="group relative flex gap-4 rounded-lg border border-transparent bg-zinc-900/90 pb-[0.65rem] pl-[.55rem] pr-[.55rem] pt-[0.75rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
