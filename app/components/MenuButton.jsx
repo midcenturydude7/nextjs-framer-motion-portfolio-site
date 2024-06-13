@@ -60,31 +60,32 @@ export default function MenuButton({
                   />
                 ) : null}
               </AnimatePresence>
+
+              {selected === path ? (
+                <motion.div
+                  className="absolute bottom-[-10px] left-0 z-0 h-[4px] w-[100%] rounded-[8px] bg-slate-700/50 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600"
+                  layoutId="underline"
+                />
+              ) : null}
               <AnimatePresence>
-                {selected === path ? (
-                  <>
-                    <motion.div
-                      className="absolute bottom-[-10px] left-0 z-0 h-[4px] w-[100%] rounded-[8px] bg-slate-700/50 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600"
-                      layoutId="underline"
-                    />
-                    <motion.div
-                      className={`absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-500`}
-                      transition={{
-                        layout: {
-                          duration: 0.4,
-                          ease: "easeOut",
-                        },
-                      }}
-                      exit={{
-                        opacity: 0,
-                        transition: {
-                          duration: 0.75,
-                          ease: "easeOut",
-                        },
-                      }}
-                      layoutId="highlight"
-                    />
-                  </>
+                {!focused && selected === path ? (
+                  <motion.div
+                    className={`absolute inset-0 z-0 rounded-[8px] bg-slate-700/50 transition-colors duration-500`}
+                    transition={{
+                      layout: {
+                        duration: 0.4,
+                        ease: "easeOut",
+                      },
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.75,
+                        ease: "easeOut",
+                      },
+                    }}
+                    layoutId="highlight"
+                  />
                 ) : null}
               </AnimatePresence>
             </button>
