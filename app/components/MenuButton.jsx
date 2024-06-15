@@ -46,7 +46,7 @@ export default function MenuButton({
                 {focused === path ? (
                   <motion.div
                     initial={false}
-                    className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-pink-600/80 transition-colors ${background === path ? "bg-fuchsia-700/30 transition-colors duration-1000" : ""}`}
+                    className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-600/70 to-purple-500/90 transition-colors ${background === path ? "bg-fuchsia-700/30 transition-colors duration-1000" : ""}`}
                     transition={{
                       layout: {
                         duration: 0.375,
@@ -67,7 +67,7 @@ export default function MenuButton({
               </AnimatePresence>
               {selected === path ? (
                 <motion.div
-                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-fuchsia-800/25 transition-colors duration-700 group-hover:bg-gradient-to-r group-hover:from-pink-600 group-hover:to-purple-600 group-hover:duration-1000"
+                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-fuchsia-800/30 transition-colors duration-700 group-hover:bg-gradient-to-r group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
                   transition={{
                     layout: {
                       duration: 0.25,
@@ -84,7 +84,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
-                    className={`absolute inset-0 z-[2] rounded-[8px] bg-fuchsia-700/30 transition-colors duration-500 group-hover:bg-pink-600/80 group-hover:duration-1000`}
+                    className={`absolute inset-0 z-[2] rounded-[8px] bg-fuchsia-700/30 transition-colors duration-500 group-hover:bg-pink-600/70 group-hover:duration-1000`}
                     transition={{
                       layout: {
                         duration: 0.2,
