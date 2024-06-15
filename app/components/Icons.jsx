@@ -27,7 +27,7 @@ export default function Icons() {
               <AnimatePresence>
                 {circle === label ? (
                   <motion.div
-                    className="absolute inset-[0.5px] z-0 h-[100%] w-[100%] rounded-full bg-slate-700/80"
+                    className="absolute inset-[0.5px] z-0 h-[100%] w-[100%] rounded-full bg-pink-600/80"
                     transition={{
                       layout: {
                         duration: 0.375,
