@@ -35,4 +35,19 @@ module.exports = {
     },
   },
   plugins: [],
+  // variants: {
+  //   extend: {
+  //     backgroundColor: ["group-hover"],
+  //     gradientColorStops: ["group-hover"],
+  //     textColor: ["group-hover"],
+  //     scale: ["group-hover"],
+  //     translate: ["group-hover, hover"],
+  //     rotate: ["group-hover"],
+  //     display: ["group-hover"],
+  //     transitionProperty: ["group-hover"],
+  //     transitionDuration: ["group-hover"],
+  //     transitionTimingFunction: ["group-hover"],
+  //     transitionDelay: ["group-hover"],
+  //   },
+  // },
 };

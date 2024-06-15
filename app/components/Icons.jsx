@@ -14,7 +14,7 @@ export default function Icons() {
         {navIcons.map(({ icon: Icon, url, id, label }) => (
           <Link key={id} href={url} target="_noblank">
             <motion.button
-              onUnload={() => setCircle(null)}
+              layout
               onKeyDown={(e) => (e.key === "Enter" ? setCircle(label) : null)}
               onFocus={() => setCircle(label)}
               onMouseEnter={() => setCircle(label)}
