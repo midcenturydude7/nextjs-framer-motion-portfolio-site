@@ -36,11 +36,12 @@ export default function MenuButton({
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
               </span>
-              <span
+              <motion.span
+                layout
                 className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-500`}
               >
                 {label}
-              </span>
+              </motion.span>
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
