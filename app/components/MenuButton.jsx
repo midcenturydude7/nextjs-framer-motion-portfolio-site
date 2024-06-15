@@ -31,7 +31,7 @@ export default function MenuButton({
               onPointerEnter={() => setFocused(path)}
               onPointerUp={() => setBackground(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-fuchsia-700/30 text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-fuchsia-700/30 text-[#fad4fe]/70 transition-colors hover:bg-fuchsia-700/30 hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
@@ -56,7 +56,7 @@ export default function MenuButton({
                     exit={{
                       opacity: 0,
                       transition: {
-                        duration: 2,
+                        duration: 1,
                         ease: "easeOut",
                       },
                     }}
@@ -71,6 +71,10 @@ export default function MenuButton({
                     layout: {
                       duration: 0.25,
                       ease: "easeOut",
+                      type: "spring",
+                      bounce: 0,
+                      damping: 50,
+                      stiffness: 500,
                     },
                   }}
                   layoutId="underline"
@@ -85,9 +89,9 @@ export default function MenuButton({
                         duration: 0.2,
                         ease: "easeOut",
                         type: "spring",
-                        bounce: 2,
-                        damping: 35,
-                        stiffness: 700,
+                        bounce: 0,
+                        damping: 50,
+                        stiffness: 500,
                       },
                     }}
                     exit={{
