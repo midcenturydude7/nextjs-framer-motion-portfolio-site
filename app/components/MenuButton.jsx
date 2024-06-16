@@ -31,7 +31,7 @@ export default function MenuButton({
               onPointerEnter={() => setFocused(path)}
               onPointerUp={() => setBackground(path)}
               tabIndex={0}
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-fuchsia-700/30 text-[#fad4fe]/70 transition-colors hover:bg-fuchsia-700/30 hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
+              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default bg-fuchsia-700/30 text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
@@ -67,7 +67,7 @@ export default function MenuButton({
               </AnimatePresence>
               {selected === path ? (
                 <motion.div
-                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-fuchsia-800/30 transition-colors duration-700 group-hover:bg-gradient-to-r group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
+                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
                   transition={{
                     layout: {
                       duration: 0.25,
@@ -84,7 +84,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
-                    className={`absolute inset-0 z-[2] rounded-[8px] bg-fuchsia-700/30 transition-colors duration-500 group-hover:bg-pink-600/70 group-hover:duration-1000`}
+                    className={`absolute inset-0 z-[2] rounded-[8px] bg-gradient-to-r from-pink-700/70 to-fuchsia-700/30 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600/70 group-hover:to-purple-500/90 group-hover:duration-1000`}
                     transition={{
                       layout: {
                         duration: 0.2,
