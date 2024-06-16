@@ -7,7 +7,6 @@ export default function Menu() {
   const pathname = usePathname();
   const [selected, setSelected] = React.useState(pathname);
   const [focused, setFocused] = React.useState(null);
-  const [background, setBackground] = React.useState(null);
 
   return (
     <nav onPointerLeave={() => setFocused(null)} className="group relative">
@@ -18,8 +17,7 @@ export default function Menu() {
         setSelected={setSelected}
         focused={focused}
         setFocused={setFocused}
-        background={background}
-        setBackground={setBackground}
+
       />
 
       {/* <div className="relative flex gap-6 rounded-lg border border-transparent bg-zinc-900/90 pb-[0.4rem] pl-[1.9rem] pr-[.55rem] pt-[1rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">

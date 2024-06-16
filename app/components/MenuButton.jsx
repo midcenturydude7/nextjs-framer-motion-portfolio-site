@@ -10,8 +10,6 @@ export default function MenuButton({
   setSelected,
   focused,
   setFocused,
-  background,
-  setBackground,
 }) {
   const pathname = usePathname();
 
@@ -22,22 +20,21 @@ export default function MenuButton({
         return (
           <Link key={id} href={path}>
             <motion.button
-              layout
+              layout // Links the button to the layout animation
               data-active={isActive}
               onClick={() => setSelected(path)}
               onKeyDown={(e) => (e.key === "Enter" ? setSelected(path) : null)}
-              onLoad={() => setFocused(!focused)}
+              onLoad={() => setFocused(null)} // Resets the focus state on load
               onFocus={() => setFocused(path)}
               onPointerEnter={() => setFocused(path)}
-              onPointerUp={() => setBackground(path)}
-              tabIndex={0}
+              tabIndex={0} // Makes the button focusable
               className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"}`}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
               </span>
               <motion.span
-                layout
+                layout // Links the label and its container to the layout animation
                 className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-500`}
               >
                 {label}
@@ -46,7 +43,7 @@ export default function MenuButton({
                 {focused === path ? (
                   <motion.div
                     initial={false}
-                    className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-600/70 to-purple-500/90 transition-colors ${background === path ? "bg-fuchsia-700/30 transition-colors duration-1000" : ""}`}
+                    className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-600/70 to-purple-500/90 transition-colors`}
                     transition={{
                       layout: {
                         duration: 0.375,
