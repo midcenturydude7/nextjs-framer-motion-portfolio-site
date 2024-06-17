@@ -35,10 +35,11 @@ export default function MenuButton({
               </span>
               <motion.span
                 layout // Links the label and its container to the layout animation
-                className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-500`}
+                className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-1000`}
               >
                 {label}
               </motion.span>
+              {/* MAIN HIGHLIGHT: Animates when the button is focused */}
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
@@ -62,6 +63,7 @@ export default function MenuButton({
                   />
                 ) : null}
               </AnimatePresence>
+              {/* UNDERLINE: Animates along selected path */}
               {selected === path ? (
                 <motion.div
                   className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
@@ -78,6 +80,7 @@ export default function MenuButton({
                   layoutId="underline"
                 />
               ) : null}
+              {/* 'BOOMERANG' HIGHLIGHT: If new path isn't selected, returns to currently selected path */}
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
