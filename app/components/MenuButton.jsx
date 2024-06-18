@@ -39,11 +39,10 @@ export default function MenuButton({
               >
                 {label}
               </motion.span>
-              {/* MAIN HIGHLIGHT: Animates when the button is focused */}
+              {/* 'FOLLOW' HIGHLIGHT: Animates when the button is focused and follows cursor */}
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
-                    initial={false}
                     className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-600/70 to-purple-500/90 transition-colors`}
                     transition={{
                       layout: {
@@ -63,10 +62,10 @@ export default function MenuButton({
                   />
                 ) : null}
               </AnimatePresence>
-              {/* UNDERLINE: Animates along selected path */}
+              {/* UNDERLINE: Animates/moves along selected path */}
               {selected === path ? (
                 <motion.div
-                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
+                  className={`absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000 ${selected === path && !focused ? "bg-gradient-to-r from-pink-700/70 to-fuchsia-700/30 transition-colors" : null}`}
                   transition={{
                     layout: {
                       duration: 0.25,
@@ -80,7 +79,7 @@ export default function MenuButton({
                   layoutId="underline"
                 />
               ) : null}
-              {/* 'BOOMERANG' HIGHLIGHT: If new path isn't selected, returns to currently selected path */}
+              {/* 'BOOMERANG' HIGHLIGHT: If new path isn't selected, highlight returns to currently selected path */}
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
