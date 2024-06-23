@@ -3,6 +3,7 @@ import AboutSVG from "../components/AboutSVG";
 import ContactSVG from "../components/ContactSVG";
 import WorkSVG from "../components/WorkSVG";
 import ResourcesSVG from "../components/ResourcesSVG";
+import CloudSVG from "../components/CloudSVG";
 
 export const navItems = [
   {
@@ -21,7 +22,7 @@ export const navItems = [
     label: "work",
   },
   {
-    svg: <ResourcesSVG />,
+    svg: <CloudSVG />,
     path: "/resources",
     label: "resources",
   },
