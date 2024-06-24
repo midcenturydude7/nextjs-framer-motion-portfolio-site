@@ -2,7 +2,6 @@ import HomeSVG from "../components/HomeSVG";
 import AboutSVG from "../components/AboutSVG";
 import ContactSVG from "../components/ContactSVG";
 import WorkSVG from "../components/WorkSVG";
-import ResourcesSVG from "../components/ResourcesSVG";
 import CloudSVG from "../components/CloudSVG";
 
 export const navItems = [
