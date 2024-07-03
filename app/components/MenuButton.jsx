@@ -29,7 +29,15 @@ export default function MenuButton({
               onFocus={() => setFocused(path)}
               onPointerEnter={() => setFocused(path)}
               tabIndex={0} // Makes the button focusable
-              className={`relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50 ${selected === path ? "cursor-default text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70" : "cursor-pointer duration-500 hover:text-purple-200/90"} ${selected === path && focused ? "bg-gradient-to-r from-pink-600/80 to-purple-500/90 transition-colors duration-1000" : null}`}
+              className={cn(
+                "relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50",
+                selected === path
+                  ? "cursor-default text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70"
+                  : "cursor-pointer duration-500 hover:text-purple-200/90",
+                selected === path && focused
+                  ? "bg-gradient-to-r from-pink-600/80 to-purple-500/90 transition-colors duration-1000"
+                  : null,
+              )}
             >
               <span className="absolute left-[1.25rem] top-1 stroke-1 transition-colors hover:duration-500 group-hover:stroke-2">
                 {svg}
