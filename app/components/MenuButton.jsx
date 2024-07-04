@@ -44,7 +44,7 @@ export default function MenuButton({
               </span>
               <motion.span
                 layout // Links the label and its container to the layout animation
-                className={`z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-1000`}
+                className="z-10 h-[2.313rem] w-[7rem] select-none rounded-[8px] pl-[1.25rem] pt-[0.575rem] text-[1rem] hover:duration-1000"
               >
                 {label}
               </motion.span>
@@ -52,7 +52,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
-                    className={`absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-500/80 to-indigo-500/70 transition-colors duration-200`}
+                    className="absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-pink-500/80 to-indigo-500/70 transition-colors duration-200"
                     transition={{
                       layout: {
                         duration: 0.375,
@@ -74,7 +74,7 @@ export default function MenuButton({
               {/* UNDERLINE: Animates/moves along selected path */}
               {selected === path ? (
                 <motion.div
-                  className={`absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000`}
+                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-l from-pink-700/70 to-fuchsia-700/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
                   transition={{
                     layout: {
                       duration: 0.25,
@@ -92,7 +92,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
-                    className={`absolute inset-0 z-[2] rounded-[8px] bg-gradient-to-r from-pink-700/70 to-fuchsia-700/30 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000`}
+                    className="absolute inset-0 z-[2] rounded-[8px] bg-gradient-to-r from-pink-700/70 to-fuchsia-700/30 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-pink-600/80 group-hover:to-purple-500/90 group-hover:duration-1000"
                     transition={{
                       layout: {
                         duration: 0.2,
