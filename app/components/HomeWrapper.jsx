@@ -2,7 +2,11 @@ import React from "react";
 
 export default function HomeWrapper() {
   return (
-    <div className="flex h-lvh flex-col items-center justify-start p-24">
+    <div className="relative flex h-lvh flex-col items-center justify-start p-24">
+      <div className="absolute left-[35%] top-20 z-[-1] h-36 w-72 rounded-full bg-slate-50/20 blur-3xl"></div>
+      <div className="animate-blob absolute left-[28%] top-20 h-72 w-72 rounded-full bg-indigo-500 mix-blend-multiply blur-2xl filter"></div>
+      <div className="animate-blob animation-delay-2000 absolute left-[38%] top-20 h-72 w-72 rounded-full bg-fuchsia-500 mix-blend-multiply blur-2xl filter"></div>
+      <div className="animate-blob animation-delay-4000 absolute left-[33%] top-48 h-72 w-72 rounded-full bg-pink-700 mix-blend-multiply blur-2xl filter"></div>
       <div className="flex h-[33%] w-[45%] text-slate-100/50">
         <div className="flex w-[55%] flex-col gap-[1.2rem] text-[1.2rem]">
           <div className="relative flex flex-1 items-center rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/10 bg-gradient-to-r from-slate-900/90 to-transparent pl-16">
@@ -49,13 +53,13 @@ export default function HomeWrapper() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
-                class="size-6"
+                className="size-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M3 8.25V18a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 18V8.25m-18 0V6a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 6v2.25m-18 0h18M5.25 6h.008v.008H5.25V6ZM7.5 6h.008v.008H7.5V6Zm2.25 0h.008v.008H9.75V6Z"
                 />
               </svg>
@@ -63,21 +67,29 @@ export default function HomeWrapper() {
             <h1>BUILD</h1>
           </div>
         </div>
-        <div className="mt-[-2rem] flex w-[45%] flex-1 items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
+        <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
           <h1 className="inline-block bg-gradient-to-r from-slate-500/80 to-fuchsia-700/30 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
             Hello.
           </h1>
+          <p className="text-justif mt-[-1.75rem] text-[1.1rem] leading-8">
+            I am a self-taught frontend engineer with a passion for transforming
+            ideas into engaging, responsive, and high-performance websites. My
+            background in communications and my interest in and experience
+            working with Nextjs, React, and Framer-motion combine to blend
+            creativity and technical expertise to create web solutions that
+            connect with users.
+          </p>
         </div>
       </div>
       <div className="mt-20 w-[45%]">
         <div className="flex justify-between gap-10 text-[1.2rem] text-slate-100/50">
-          <div className="flex h-[300px] w-[30%] flex-1 items-center justify-center rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent">
+          <div className="flex h-[300px] w-[30%] flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
             <h1>Project 1</h1>
           </div>
-          <div className="flex h-[300px] w-[30%] flex-1 items-center justify-center rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent">
+          <div className="flex h-[300px] w-[30%] flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
             <h1>Project 2</h1>
           </div>
-          <div className="flex h-[300px] w-[30%] flex-1 items-center justify-center rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent">
+          <div className="flex h-[300px] w-[30%] flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
             <h1>Project 3</h1>
           </div>
         </div>

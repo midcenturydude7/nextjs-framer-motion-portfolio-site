@@ -1,3 +1,5 @@
+const { transform } = require("next/dist/build/swc");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -19,6 +21,7 @@ module.exports = {
     },
     animation: {
       tilt: "tilt 10s infinite linear",
+      blob: "blob 10s infinite",
     },
     keyframes: {
       tilt: {
@@ -30,6 +33,20 @@ module.exports = {
         },
         "75%": {
           transform: "rotate(-1.25deg)",
+        },
+      },
+      blob: {
+        "0%": {
+          transform: "translate(0px, 0px) scale(1)",
+        },
+        "33%": {
+          transform: "translate(30px, -50px) scale(1.1)",
+        },
+        "66%": {
+          transform: "translate(-20px, 20px) scale(0.9)",
+        },
+        "100%": {
+          transform: "translate(0px, 0px) scale(1)",
         },
       },
     },
