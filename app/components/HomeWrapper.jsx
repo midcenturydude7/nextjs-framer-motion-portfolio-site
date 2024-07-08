@@ -3,7 +3,8 @@ import React from "react";
 export default function HomeWrapper() {
   return (
     <div className="relative flex h-lvh flex-col items-center justify-start p-24">
-      <div className="absolute left-[35%] top-20 z-[-1] h-36 w-72 rounded-full bg-slate-50/20 blur-3xl"></div>
+      <div className="absolute left-[63%] top-28 z-[-2] h-60 w-36 -rotate-45 rounded-xl bg-gradient-to-r from-slate-200/80 from-10% via-purple-900/90 via-50% to-fuchsia-700/70 to-90% opacity-30 blur-3xl"></div>
+      <div className="absolute left-[35%] top-20 z-[-1] h-36 w-72 rounded-full bg-sky-200/80 opacity-30 blur-3xl"></div>
       <div className="animate-blob absolute left-[28%] top-20 h-72 w-72 rounded-full bg-indigo-500 mix-blend-multiply blur-2xl filter"></div>
       <div className="animate-blob animation-delay-2000 absolute left-[38%] top-20 h-72 w-72 rounded-full bg-fuchsia-500 mix-blend-multiply blur-2xl filter"></div>
       <div className="animate-blob animation-delay-4000 absolute left-[33%] top-48 h-72 w-72 rounded-full bg-pink-700 mix-blend-multiply blur-2xl filter"></div>
@@ -68,14 +69,14 @@ export default function HomeWrapper() {
           </div>
         </div>
         <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
-          <h1 className="inline-block bg-gradient-to-r from-slate-500/80 to-fuchsia-700/30 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
+          <h1 className="inline-block bg-gradient-to-r from-rose-600/90 to-fuchsia-700/30 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
             Hello.
           </h1>
           <p className="text-justif mt-[-1.75rem] text-[1.1rem] leading-8">
             I am a self-taught frontend engineer with a passion for transforming
             ideas into engaging, responsive, and high-performance websites. My
             background in communications and my interest in and experience
-            working with Nextjs, React, and Framer-motion combine to blend
+            working with Nextjs, React, and Framer-motion enable me to blend
             creativity and technical expertise to create web solutions that
             connect with users.
           </p>
