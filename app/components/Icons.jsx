@@ -9,7 +9,7 @@ export default function Icons() {
 
   return (
     <nav onPointerLeave={() => setCircle(null)} className="group relative">
-      <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-pink-600 to-purple-600 opacity-50 blur transition duration-1000 group-hover:opacity-100" />
+      <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-sky-500/80 from-10% via-fuchsia-700/70 via-60% to-purple-800/90 to-80% opacity-50 blur transition duration-1000 group-hover:opacity-100" />
       <div className="relative flex gap-3 rounded-lg border border-transparent bg-zinc-900/90 px-[1.25rem] py-[0.475rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
         {navIcons.map(({ icon: Icon, url, id, label }) => (
           <Link key={id} href={url} target="_noblank">
@@ -27,7 +27,7 @@ export default function Icons() {
               <AnimatePresence>
                 {circle === label ? (
                   <motion.div
-                    className="absolute inset-[0.5px] z-0 h-[100%] w-[100%] rounded-full bg-gradient-to-r from-pink-600/70 to-purple-500/90"
+                    className="absolute inset-[0.5px] z-0 h-[100%] w-[100%] rounded-full bg-gradient-to-t from-sky-950/80 to-sky-300/70"
                     transition={{
                       layout: {
                         duration: 0.375,
