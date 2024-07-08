@@ -69,7 +69,7 @@ export default function HomeWrapper() {
           </div>
         </div>
         <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
-          <h1 className="inline-block bg-gradient-to-r from-rose-600/90 to-fuchsia-700/30 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
+          <h1 className="inline-block bg-gradient-to-r from-sky-300/90 to-fuchsia-700/30 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
             Hello.
           </h1>
           <p className="text-justif mt-[-1.75rem] text-[1.1rem] leading-8">
