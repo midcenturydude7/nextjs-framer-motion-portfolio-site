@@ -35,7 +35,7 @@ export default function MenuButton({
                   ? "cursor-default text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70"
                   : "cursor-pointer duration-500 hover:text-purple-200/90",
                 selected === path && focused
-                  ? "bg-gradient-to-r from-sky-600/80 to-purple-500/70 transition-colors duration-1000"
+                  ? "bg-gradient-to-r from-sky-500/80 to-indigo-600/70 transition-colors duration-1000"
                   : null,
               )}
             >
@@ -52,7 +52,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {focused === path ? (
                   <motion.div
-                    className="absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-sky-500/70 from-10% to-purple-800/90 to-95% transition-colors duration-200"
+                    className="absolute inset-0 z-[2] h-[100%] w-[100%] rounded-[8px] bg-gradient-to-r from-sky-500/80 from-10% to-indigo-600/70 to-95% transition-colors duration-200"
                     transition={{
                       layout: {
                         duration: 0.375,
@@ -74,7 +74,7 @@ export default function MenuButton({
               {/* UNDERLINE: Animates/moves along selected path */}
               {selected === path ? (
                 <motion.div
-                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-r from-indigo-900/30 to-sky-300/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-sky-600/80 group-hover:from-10% group-hover:to-purple-800/90 group-hover:to-95% group-hover:duration-1000"
+                  className="absolute bottom-[-9px] left-0 z-0 h-[4.5px] w-[100%] rounded-[8px] bg-gradient-to-r from-indigo-900/30 to-sky-300/30 transition-colors duration-700 group-hover:bg-gradient-to-l group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition-colors group-hover:duration-1000"
                   transition={{
                     layout: {
                       duration: 0.25,
@@ -92,7 +92,7 @@ export default function MenuButton({
               <AnimatePresence>
                 {!focused && selected === path ? (
                   <motion.div
-                    className="absolute inset-0 z-[2] rounded-[8px] bg-gradient-to-r from-sky-300/30 to-indigo-900/30 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-600/80 group-hover:from-10% group-hover:to-purple-800/70 group-hover:to-95% group-hover:duration-1000"
+                    className="absolute inset-0 z-[2] rounded-[8px] bg-gradient-to-r from-sky-300/30 to-indigo-900/30 transition-colors duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition-colors group-hover:duration-1000"
                     transition={{
                       layout: {
                         duration: 0.2,
