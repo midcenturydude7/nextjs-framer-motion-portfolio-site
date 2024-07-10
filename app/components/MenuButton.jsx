@@ -30,7 +30,7 @@ export default function MenuButton({
               onPointerEnter={() => setFocused(path)}
               tabIndex={0} // Makes the button focusable
               className={cn(
-                "relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/80 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50",
+                "relative flex h-[2.313rem] w-[7rem] items-center justify-center rounded-lg bg-slate-900/30 text-[#E8E8FD]/50 outline-[none] transition-colors focus:rounded-[8px] group-hover:bg-slate-900/50",
                 selected === path
                   ? "cursor-default text-[#fad4fe]/70 transition-colors hover:text-[#fad4fe]/70"
                   : "cursor-pointer duration-500 hover:text-purple-200/90",
