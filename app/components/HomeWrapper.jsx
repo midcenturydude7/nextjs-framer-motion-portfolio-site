@@ -1,6 +1,9 @@
+"use client";
 import React from "react";
 
 export default function HomeWrapper() {
+  const [hovered, setHovered] = React.useState(null);
+
   return (
     <div className="relative flex h-lvh flex-col items-center justify-start p-24">
       {/* ANIMATED SHAPES | TODO: CREATE COMPONENT FOR SCREEN READERS TO IGNORE */}
