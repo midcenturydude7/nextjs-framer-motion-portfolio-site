@@ -11,9 +11,9 @@ export default function HomeWrapper() {
       <div className="absolute left-[63%] top-28 z-[-2] h-60 w-36 -rotate-45 rounded-xl bg-gradient-to-r from-slate-200/80 from-10% via-purple-900/90 via-50% to-fuchsia-700/70 to-90% opacity-30 blur-3xl" />
       <div
         className={cn(
-          "absolute left-[35%] top-20 z-[-1] h-36 w-72 rounded-full bg-sky-200/80 opacity-30 blur-3xl",
+          "absolute left-[35%] top-20 z-[-1] h-36 w-72 rounded-full bg-sky-200/80 opacity-30 blur-3xl transition duration-1000",
           hovered
-            ? "opacity-70 transition delay-100 duration-1000 ease-in-out"
+            ? "opacity-50 transition delay-100 duration-1000 ease-in-out"
             : "",
         )}
       />
@@ -27,7 +27,7 @@ export default function HomeWrapper() {
           <div
             onPointerEnter={() => setHovered(!hovered)}
             onPointerLeave={() => setHovered(!hovered)}
-            className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition-all delay-1000 duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition-all hover:delay-1000 hover:duration-1000 hover:ease-in-out"
+            className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition hover:duration-1000 hover:ease-in-out"
           >
             <div className="flex w-[7rem] items-end justify-between">
               <div className="transition-colors duration-1000 ease-in-out group-hover:text-indigo-200/70 group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
