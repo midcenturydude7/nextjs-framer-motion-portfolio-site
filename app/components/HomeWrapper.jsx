@@ -6,6 +6,7 @@ import { cn } from "../lib/utils";
 export default function HomeWrapper() {
   const [hovered, setHovered] = React.useState(false);
   const [selected, setSelected] = React.useState(null);
+  const [clicked, setClicked] = React.useState(false);
 
   return (
     <div className="relative flex h-lvh flex-col items-center justify-start p-24">
@@ -33,6 +34,7 @@ export default function HomeWrapper() {
               onPointerEnter={() => setHovered(true)}
               onPointerLeave={() => setHovered(false)}
               onMouseEnter={() => setSelected(id)}
+              onClick={() => setClicked(true)}
               className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition hover:duration-1000 hover:ease-in-out"
             >
               <div className="flex w-[7rem] items-end justify-between">
@@ -41,7 +43,11 @@ export default function HomeWrapper() {
                   {label}
                 </h1>
               </div>
-              {hovered && selected === id ? <div>{tag}</div> : null}
+              {hovered && selected === id ? (
+                <div className="rounded-lg px-4 py-2 transition-colors group-hover:bg-gradient-to-r group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
+                  {tag}
+                </div>
+              ) : null}
               <div className="opacity-20 transition-all ease-in-out group-hover:text-indigo-200/70 group-hover:opacity-100 group-hover:transition-all group-hover:duration-1000 group-hover:ease-in-out">
                 {svgArrow}
               </div>
