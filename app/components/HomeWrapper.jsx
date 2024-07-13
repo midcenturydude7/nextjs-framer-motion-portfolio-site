@@ -37,19 +37,30 @@ export default function HomeWrapper() {
               onClick={() => setClicked(true)}
               className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition hover:duration-1000 hover:ease-in-out"
             >
-              <div className="flex w-[7rem] items-end justify-between">
+              <div
+                className={cn(
+                  "flex items-end justify-between",
+                  label === "Design" ? "w-[6.9rem]" : "w-[6rem]",
+                )}
+              >
                 <span>{svgIcon}</span>
                 <h1 className="transition-colors duration-1000 ease-in-out group-hover:text-indigo-200/70 group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
                   {label}
                 </h1>
               </div>
-              {hovered && selected === id ? (
-                <div className="rounded-lg px-4 py-2 transition-colors group-hover:bg-gradient-to-r group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
-                  {tag}
+              <div className="flex w-[fit-content] items-center justify-between">
+                {hovered && selected === id ? (
+                  <span className="mr-4 rounded-lg border border-transparent px-4 py-2 transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition group-hover:duration-1000 group-hover:ease-in-out">
+                    {tag}
+                  </span>
+                ) : (
+                  <span className="mr-4 rounded-lg border border-slate-200/20 px-4 py-2 opacity-20 transition duration-1000">
+                    {tag}
+                  </span>
+                )}
+                <div className="opacity-10 transition-all ease-in-out group-hover:text-indigo-200/70 group-hover:opacity-100 group-hover:transition-all group-hover:duration-1000 group-hover:ease-in-out">
+                  {svgArrow}
                 </div>
-              ) : null}
-              <div className="opacity-20 transition-all ease-in-out group-hover:text-indigo-200/70 group-hover:opacity-100 group-hover:transition-all group-hover:duration-1000 group-hover:ease-in-out">
-                {svgArrow}
               </div>
             </div>
           ))}
