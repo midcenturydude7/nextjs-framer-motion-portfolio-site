@@ -1,12 +1,18 @@
 "use client";
 import React from "react";
-import { heroTabs } from "../lib/heroTabs";
+import { heroTabs, heroContent } from "../lib/heroTabs";
 import { cn } from "../lib/utils";
 
 export default function HomeWrapper() {
   const [hovered, setHovered] = React.useState(false);
   const [selected, setSelected] = React.useState(null);
   const [clicked, setClicked] = React.useState(false);
+  const [activeTab, setActiveTab] = React.useState(null);
+
+  function handleTabClick(id) {
+    setActiveTab(id);
+    setClicked(true);
+  }
 
   return (
     <div className="relative flex h-lvh flex-col items-center justify-start p-24">
@@ -33,8 +39,13 @@ export default function HomeWrapper() {
               key={id}
               onPointerEnter={() => setHovered(true)}
               onPointerLeave={() => setHovered(false)}
-              onMouseEnter={() => setSelected(id)}
-              onClick={() => setClicked(true)}
+              onMouseEnter={() => {
+                setSelected(id) && setClicked(false);
+              }}
+              onMouseLeave={() => {
+                setSelected(null) && setClicked(false);
+              }}
+              onClick={() => handleTabClick(id)}
               className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition hover:duration-1000 hover:ease-in-out"
             >
               <div
@@ -66,25 +77,18 @@ export default function HomeWrapper() {
           ))}
         </div>
         <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
-          <div className="flex w-full items-center justify-between">
-            <h1 className="inline-block bg-gradient-to-r from-sky-300/90 to-indigo-900/70 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
-              Hello.
-            </h1>
-            <div className="group relative mt-[-2.75rem] pr-12">
-              {/* <div className="absolute -inset-0.5 h-[7rem] w-[7rem] animate-tilt rounded-full bg-gradient-to-r from-sky-500/80 from-10% via-fuchsia-700/70 via-60% to-purple-800/90 to-80% opacity-10 blur transition duration-1000 group-hover:opacity-20" /> */}
-              <div className="flex h-[7.75rem] w-[7.75rem] items-center justify-center rounded-full border border-slate-200/10">
-                <p>I am Matt</p>
-              </div>
+          {/* HELLO SECTION */}
+          {clicked && activeTab ? (
+            heroContent.map(({ id, component }) => (
+              <div key={id}>{activeTab === id && component}</div>
+            ))
+          ) : (
+            <div>
+              {heroContent.map(({ id, component, label}) => (
+                <div key={id}>{label === "HomeContent" && component}</div>
+              ))}
             </div>
-          </div>
-          <div>
-            <p className="mt-[-1.75rem] text-justify text-[1.1rem] font-light leading-[2.2rem]">
-              Thanks for stopping by. I am a self-taught frontend engineer with
-              a background in communications. I have a passion for building web
-              solutions that are engaginging and useful. Take a moment to click
-              around and let me know what you think.
-            </p>
-          </div>
+          )}
         </div>
       </div>
       {/* MAIN CONTENT: PROJECTS SECTION */}
