@@ -32,7 +32,7 @@ export default function HomeWrapper() {
       <div className="animation-delay-4000 absolute left-[33%] top-48 h-72 w-72 animate-blob rounded-full bg-pink-700 mix-blend-multiply blur-2xl filter" />
       {/* MAIN CONTENT: HERO SECTION */}
       <div className="flex h-[33%] w-[45%] text-slate-100/50">
-        <div className="flex w-[55%] flex-col gap-[1.2rem] text-[1.2rem]">
+        <div className="flex w-[45%] flex-col gap-[1.2rem] text-[1.2rem]">
           {/* TABS: DESIGN, CODE, BUILD */}
           {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
             <div
@@ -76,7 +76,7 @@ export default function HomeWrapper() {
             </div>
           ))}
         </div>
-        <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
+        <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
           {/* HELLO SECTION */}
           {clicked && activeTab ? (
             heroContent.map(({ id, component }) => (
