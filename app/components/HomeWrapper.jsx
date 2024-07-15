@@ -76,15 +76,17 @@ export default function HomeWrapper() {
             </div>
           ))}
         </div>
-        <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start rounded-lg border-r-[1px] border-t-[1px] border-transparent bg-transparent pl-[4rem]">
+        <div className="mt-[-4rem] flex w-[45%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
           {/* HELLO SECTION */}
           {clicked && activeTab ? (
             heroContent.map(({ id, component }) => (
-              <div key={id}>{activeTab === id && component}</div>
+              <div key={id} className="h-full w-full">
+                {activeTab === id && component}
+              </div>
             ))
           ) : (
             <div>
-              {heroContent.map(({ id, component, label}) => (
+              {heroContent.map(({ id, component, label }) => (
                 <div key={id}>{label === "HomeContent" && component}</div>
               ))}
             </div>
