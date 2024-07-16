@@ -46,7 +46,12 @@ export default function HomeWrapper() {
                 setSelected(null) && setClicked(false);
               }}
               onClick={() => handleTabClick(id)}
-              className="group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 ease-in-out hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 hover:to-transparent hover:transition hover:duration-1000 hover:ease-in-out"
+              className={cn(
+                "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
+                activeTab === id
+                  ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
+                  : null,
+              )}
             >
               <div
                 className={cn(
@@ -55,21 +60,35 @@ export default function HomeWrapper() {
                 )}
               >
                 <span>{svgIcon}</span>
-                <h1 className="transition-colors duration-1000 ease-in-out group-hover:text-indigo-200/70 group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
+                <h1 className="transition duration-1000 group-hover:text-indigo-200/70">
                   {label}
                 </h1>
               </div>
               <div className="flex w-[fit-content] items-center justify-between">
                 {hovered && selected === id ? (
-                  <span className="mr-4 rounded-lg border border-transparent px-4 py-2 transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-500/80 group-hover:from-10% group-hover:to-indigo-600/70 group-hover:to-95% group-hover:transition group-hover:duration-1000 group-hover:ease-in-out">
+                  <span className="mr-4 rounded-lg border border-slate-200/20 px-[0.7rem] py-[0.35rem] transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-200/10 group-hover:from-10% group-hover:to-indigo-800/15 group-hover:to-95%">
                     {tag}
                   </span>
                 ) : (
-                  <span className="mr-4 rounded-lg border border-slate-200/20 px-4 py-2 opacity-20 transition duration-1000">
+                  <span
+                    className={cn(
+                      "mr-4 rounded-lg border border-slate-200/20 px-[0.7rem] py-[0.35rem] opacity-20 transition duration-1000",
+                      activeTab === id
+                        ? "bg-gradient-to-r from-sky-200/10 from-10% to-indigo-800/15 to-95% opacity-100"
+                        : null,
+                    )}
+                  >
                     {tag}
                   </span>
                 )}
-                <div className="opacity-10 transition-all ease-in-out group-hover:text-indigo-200/70 group-hover:opacity-100 group-hover:transition-all group-hover:duration-1000 group-hover:ease-in-out">
+                <div
+                  className={cn(
+                    "opacity-10 transition delay-500 duration-1000 group-hover:text-indigo-200/70 group-hover:opacity-100",
+                    activeTab === id
+                      ? "opacity-0 transition delay-500 group-hover:opacity-0"
+                      : null,
+                  )}
+                >
                   {svgArrow}
                 </div>
               </div>
@@ -79,11 +98,12 @@ export default function HomeWrapper() {
         <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
           {/* HELLO SECTION */}
           {clicked && activeTab ? (
-            heroContent.map(({ id, component }) => (
-              <div key={id} className="h-full w-full">
-                {activeTab === id && component}
-              </div>
-            ))
+            <div>
+              {
+                heroContent.find((content) => content.id === activeTab)
+                  .component
+              }
+            </div>
           ) : (
             <div>
               {heroContent.map(({ id, component, label }) => (
