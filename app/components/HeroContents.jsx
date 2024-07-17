@@ -9,20 +9,25 @@ import { cn } from "../lib/utils";
 export default function HeroContents({ setHovered }) {
   const [selected, setSelected] = React.useState(null);
   const [clicked, setClicked] = React.useState(false);
+  const [leftClick, setLeftClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
 
   function handleTabClick(id) {
     setActiveTab(id);
     setClicked(true);
+    setLeftClick(false);
+  }
+
+  function handleLeftArrowClick() {
+    setLeftClick(true);
+    setActiveTab(null);
   }
 
   const contentComponents = {
     DesignContent: (
       <DesignContent
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        clicked={clicked}
-        setClicked={setClicked}
+        leftClick={leftClick}
+        handleLeftArrowClick={handleLeftArrowClick}
       />
     ),
     CodeContent: (
@@ -76,7 +81,7 @@ export default function HeroContents({ setHovered }) {
             onClick={() => handleTabClick(id)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
-              activeTab === id
+              activeTab === id && leftClick === false
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
                 : null,
             )}

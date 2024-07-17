@@ -1,22 +1,10 @@
 import React from "react";
 import HomeContent from "./HomeContent";
 
-export default function DesignContent({
-  activeTab,
-  setActiveTab,
-  clicked,
-  setClicked,
-}) {
-  const [leftClick, setLeftClick] = React.useState(false);
-
-
-  function handleLeftArrowClick() {
-    setLeftClick(true);
-  }
-
+export default function DesignContent({ leftClick, handleLeftArrowClick }) {
   return (
     <div>
-      {!leftClick ? (
+      {leftClick === false ? (
         <div className="h-full w-full">
           <nav className="flex items-center justify-between pt-[6.2rem]">
             <div className="flex items-center">
