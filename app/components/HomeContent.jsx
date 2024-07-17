@@ -2,8 +2,8 @@ import React from "react";
 
 export default function HomeContent() {
   return (
-    <div>
-      <div className="flex w-full items-center justify-between">
+    <div className="h-full w-full">
+      <div className="flex items-center justify-between">
         <h1 className="inline-block bg-gradient-to-r from-sky-300/90 to-indigo-900/70 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
           Hello.
         </h1>
