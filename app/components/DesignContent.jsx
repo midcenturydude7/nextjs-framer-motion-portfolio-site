@@ -1,7 +1,16 @@
 import React from "react";
 import HomeContent from "./HomeContent";
+import CodeContent from "./CodeContent";
 
-export default function DesignContent({ leftClick, handleLeftArrowClick }) {
+export default function DesignContent({
+  leftClick,
+  handleLeftArrowClick,
+  rightClick,
+  setRightClick,
+  handleRightArrowClick,
+  activeTab,
+  setActiveTab,
+}) {
   return (
     <div>
       {leftClick === false ? (
@@ -16,13 +25,13 @@ export default function DesignContent({ leftClick, handleLeftArrowClick }) {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="size-4"
+                  className="size-4"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5"
                   />
                 </svg>
@@ -42,18 +51,24 @@ export default function DesignContent({ leftClick, handleLeftArrowClick }) {
               </li>
             </ul>
             <div className="flex items-center">
-              <button className="rounded-full border border-slate-200/20 p-2">
+              <button
+                onClick={() => {
+                  console.log("right arrow clicked");
+                  handleRightArrowClick("CodeContent");
+                }}
+                className="rounded-full border border-slate-200/20 p-2"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  strokeWidth="1.5"
                   stroke="currentColor"
-                  class="size-4"
+                  className="size-4"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5"
                   />
                 </svg>
@@ -78,7 +93,8 @@ export default function DesignContent({ leftClick, handleLeftArrowClick }) {
           </main>
         </div>
       ) : null}
-      {leftClick && <HomeContent />}
+      {leftClick && rightClick === false ? <HomeContent /> : null}
+      {rightClick && activeTab ? <CodeContent /> : null}
     </div>
   );
 }

@@ -3,13 +3,13 @@ import React from "react";
 export default function HomeContent() {
   return (
     <div className="h-full w-full">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center">
         <h1 className="inline-block bg-gradient-to-r from-sky-300/90 to-indigo-900/70 bg-clip-text font-[dolce,_sans-serif] text-[6.5rem] font-[800] not-italic text-transparent antialiased">
           Hello.
         </h1>
         <div className="group relative mt-[-2.75rem] pr-12">
           {/* <div className="absolute -inset-0.5 h-[7rem] w-[7rem] animate-tilt rounded-full bg-gradient-to-r from-sky-500/80 from-10% via-fuchsia-700/70 via-60% to-purple-800/90 to-80% opacity-10 blur transition duration-1000 group-hover:opacity-20" /> */}
-          <div className="flex h-[7.75rem] w-[7.75rem] items-center justify-center rounded-full border border-slate-200/10">
+          <div className="ml-4 flex h-[7.75rem] w-[7.75rem] items-center justify-center rounded-full border border-slate-200/10">
             <p>I am Matt</p>
           </div>
         </div>

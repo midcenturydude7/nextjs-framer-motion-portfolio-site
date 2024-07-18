@@ -10,6 +10,7 @@ export default function HeroContents({ setHovered }) {
   const [selected, setSelected] = React.useState(null);
   const [clicked, setClicked] = React.useState(false);
   const [leftClick, setLeftClick] = React.useState(false);
+  const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
 
   function handleTabClick(id) {
@@ -18,9 +19,16 @@ export default function HeroContents({ setHovered }) {
     setLeftClick(false);
   }
 
-  function handleLeftArrowClick() {
+  function handleLeftArrowClick(label) {
     setLeftClick(true);
-    setActiveTab(null);
+    setRightClick(false);
+    setActiveTab(label);
+    setClicked(false);
+  }
+
+  function handleRightArrowClick(id, label) {
+    setRightClick(true);
+    setActiveTab(id, label);
   }
 
   const contentComponents = {
@@ -28,6 +36,11 @@ export default function HeroContents({ setHovered }) {
       <DesignContent
         leftClick={leftClick}
         handleLeftArrowClick={handleLeftArrowClick}
+        rightClick={rightClick}
+        handleRightArrowClick={handleRightArrowClick}
+        setRightClick={setRightClick}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
       />
     ),
     CodeContent: (
@@ -81,7 +94,7 @@ export default function HeroContents({ setHovered }) {
             onClick={() => handleTabClick(id)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
-              activeTab === id && leftClick === false
+              activeTab === id && leftClick === false && rightClick === false
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
                 : null,
             )}
