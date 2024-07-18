@@ -26,21 +26,20 @@ export default function HeroContents({ setHovered }) {
     setClicked(false);
   }
 
-  function handleRightArrowClick(id, label) {
+  function handleRightArrowClick() {
     setRightClick(true);
-    setActiveTab(id, label);
+    setActiveTab(heroContent.find(({ label }) => label === "CodeContent")?.id);
   }
 
   const contentComponents = {
     DesignContent: (
       <DesignContent
+        clicked={clicked}
         leftClick={leftClick}
         handleLeftArrowClick={handleLeftArrowClick}
         rightClick={rightClick}
         handleRightArrowClick={handleRightArrowClick}
-        setRightClick={setRightClick}
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
       />
     ),
     CodeContent: (

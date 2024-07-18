@@ -3,13 +3,12 @@ import HomeContent from "./HomeContent";
 import CodeContent from "./CodeContent";
 
 export default function DesignContent({
+  clicked,
   leftClick,
   handleLeftArrowClick,
   rightClick,
-  setRightClick,
   handleRightArrowClick,
   activeTab,
-  setActiveTab,
 }) {
   return (
     <div>
@@ -94,7 +93,7 @@ export default function DesignContent({
         </div>
       ) : null}
       {leftClick && rightClick === false ? <HomeContent /> : null}
-      {rightClick && activeTab ? <CodeContent /> : null}
+      {rightClick && activeTab && !clicked ? <CodeContent /> : null}
     </div>
   );
 }
