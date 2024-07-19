@@ -53,15 +53,11 @@ export default function DesignContent({
                     onClick={() => handleSelectedTabClick(id)}
                     className={`
                       ${
-                        selectedTab === label
+                        selectedTab === label || selectedTab === id
                           ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
                           : null
                       }
-                      ${
-                        selectedTab === id
-                          ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
-                          : null
-                      }`}
+                      `}
                   >
                     {label}
                   </button>
