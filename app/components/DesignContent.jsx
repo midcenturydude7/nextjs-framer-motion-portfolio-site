@@ -13,7 +13,7 @@ export default function DesignContent({
   activeTab,
 }) {
   const [selectedTab, setSelectedTab] = React.useState(
-    codeTabs.find(({ id }) => id === 1).label,
+    codeTabs.find(({ label }) => label === "Tailwindcss")?.id,
   );
 
   function handleSelectedTabClick(id) {
@@ -53,9 +53,9 @@ export default function DesignContent({
                     onClick={() => handleSelectedTabClick(id)}
                     className={`
                       ${
-                        selectedTab === label || selectedTab === id
+                        selectedTab === id
                           ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
-                          : null
+                          : ""
                       }
                       `}
                   >
@@ -87,20 +87,18 @@ export default function DesignContent({
             </div>
           </nav>
           <main>
-            <div className="flex flex-col gap-4 px-4 py-6">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                illum dolorem accusamus repellat, iure enim cum nesciunt
-                ratione. Deleniti ratione dicta ullam eum pariatur, officiis id
-                repellendus est expedita asperiores.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                illum dolorem accusamus repellat, iure enim cum nesciunt
-                ratione. Deleniti ratione dicta ullam eum pariatur, officiis id
-                repellendus est expedita asperiores.
-              </p>
-            </div>
+            {selectedTab ? (
+              <div>
+                {codeTabs.find(({ id }) => id === selectedTab)?.component}
+              </div>
+            ) : (
+              <div>
+                {
+                  codeTabs.find(({ label }) => label === "Tailwindcss")
+                    ?.component
+                }
+              </div>
+            )}
           </main>
         </div>
       ) : null}
