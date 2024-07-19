@@ -19,11 +19,9 @@ export default function HeroContents({ setHovered }) {
     setLeftClick(false);
   }
 
-  function handleLeftArrowClick(label) {
+  function handleLeftArrowClick() {
     setLeftClick(true);
-    setRightClick(false);
-    setActiveTab(label);
-    setClicked(false);
+    setActiveTab(heroContent.find(({ label }) => label === "HomeContent")?.id);
   }
 
   function handleRightArrowClick() {
@@ -93,7 +91,9 @@ export default function HeroContents({ setHovered }) {
             onClick={() => handleTabClick(id)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
-              activeTab === id && leftClick === false && rightClick === false
+              activeTab === id &&
+                clicked &&
+                (leftClick === false || rightClick === false)
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
                 : null,
             )}

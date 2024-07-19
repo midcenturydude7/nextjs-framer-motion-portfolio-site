@@ -1,6 +1,8 @@
 import React from "react";
 import HomeContent from "./HomeContent";
 import CodeContent from "./CodeContent";
+import { codeTabs } from "../lib/codeTabs";
+import { cn } from "../lib/utils";
 
 export default function DesignContent({
   clicked,
@@ -10,6 +12,14 @@ export default function DesignContent({
   handleRightArrowClick,
   activeTab,
 }) {
+  const [selectedTab, setSelectedTab] = React.useState(
+    codeTabs.find(({ id }) => id === 1).label,
+  );
+
+  function handleSelectedTabClick(id) {
+    setSelectedTab(id);
+  }
+
   return (
     <div>
       {leftClick === false ? (
@@ -17,7 +27,7 @@ export default function DesignContent({
           <nav className="flex items-center justify-between pt-[6.2rem]">
             <div className="flex items-center">
               <button
-                onClick={() => handleLeftArrowClick()}
+                onClick={() => handleLeftArrowClick("HomeContent")}
                 className="rounded-full border border-slate-200/20 p-2 opacity-70"
               >
                 <svg
@@ -37,24 +47,30 @@ export default function DesignContent({
               </button>
             </div>
             <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/20 text-[1.175rem]">
-              <li>
-                <button className="rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]">
-                  Tailwindcss
-                </button>
-              </li>
-              <li>
-                <button>Animations</button>
-              </li>
-              <li>
-                <button>Tools</button>
-              </li>
+              {codeTabs.map(({ label, id }) => (
+                <li key={id}>
+                  <button
+                    onClick={() => handleSelectedTabClick(id)}
+                    className={`
+                      ${
+                        selectedTab === label
+                          ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
+                          : null
+                      }
+                      ${
+                        selectedTab === id
+                          ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
+                          : null
+                      }`}
+                  >
+                    {label}
+                  </button>
+                </li>
+              ))}
             </ul>
             <div className="flex items-center">
               <button
-                onClick={() => {
-                  console.log("right arrow clicked");
-                  handleRightArrowClick("CodeContent");
-                }}
+                onClick={() => handleRightArrowClick("CodeContent")}
                 className="rounded-full border border-slate-200/20 p-2"
               >
                 <svg
@@ -92,7 +108,7 @@ export default function DesignContent({
           </main>
         </div>
       ) : null}
-      {leftClick && rightClick === false ? <HomeContent /> : null}
+      {leftClick && activeTab && !clicked ? <HomeContent /> : null}
       {rightClick && activeTab && !clicked ? <CodeContent /> : null}
     </div>
   );
