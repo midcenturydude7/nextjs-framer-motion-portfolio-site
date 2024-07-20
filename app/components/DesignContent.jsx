@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import HomeContent from "./HomeContent";
 import CodeContent from "./CodeContent";
 import { codeTabs } from "../lib/codeTabs";
@@ -46,21 +47,48 @@ export default function DesignContent({
                 </svg>
               </button>
             </div>
-            <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/20 text-[1.175rem]">
+            <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/10 text-[1.175rem]">
               {codeTabs.map(({ label, id }) => (
                 <li key={id}>
-                  <button
+                  <motion.button
+                    layoutId="tab"
+                    transition={{
+                      layout: {
+                        duration: 0.4,
+                        ease: "easeOut",
+                        type: "spring",
+                        bounce: 0,
+                        damping: 50,
+                        stiffness: 500,
+                      },
+                    }}
                     onClick={() => handleSelectedTabClick(id)}
-                    className={`
+                    className={`relative
                       ${
                         selectedTab === id
-                          ? "rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/20 bg-indigo-950/15 px-4 py-[0.5rem]"
-                          : ""
+                          ? "cursor-default rounded-tr-lg border-l-[1px] border-r-[1px] border-t-[1px] border-slate-200/10 bg-indigo-950/15 px-4 py-[0.5rem] text-sky-300/50 hover:border-slate-200/10"
+                          : "transition-colors duration-1000 hover:text-sky-300/50"
                       }
                       `}
                   >
-                    {label}
-                  </button>
+                    <span>{label}</span>
+                    {selectedTab === id ? (
+                      <motion.div
+                        className="absolute left-0 top-10 h-[4.5px] w-[100%] bg-sky-300/20"
+                        transition={{
+                          layout: {
+                            duration: 0.25,
+                            ease: "easeOut",
+                            type: "spring",
+                            bounce: 0,
+                            damping: 50,
+                            stiffness: 500,
+                          },
+                        }}
+                        layoutId="underline"
+                      />
+                    ) : null}
+                  </motion.button>
                 </li>
               ))}
             </ul>

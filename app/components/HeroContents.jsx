@@ -111,7 +111,7 @@ export default function HeroContents({ setHovered }) {
             </div>
             <div className="flex w-[fit-content] items-center justify-between">
               {selected === id ? (
-                <span className="mr-4 rounded-lg border border-slate-200/20 px-[0.7rem] py-[0.35rem] transition-all duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-200/10 group-hover:from-10% group-hover:to-indigo-800/15 group-hover:to-95%">
+                <span className="mr-4 rounded-lg border border-slate-200/10 px-[0.7rem] py-[0.35rem] transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-200/10 group-hover:from-10% group-hover:to-indigo-800/15 group-hover:to-95%">
                   {tag}
                 </span>
               ) : (
@@ -119,8 +119,8 @@ export default function HeroContents({ setHovered }) {
                   className={cn(
                     "mr-4 rounded-lg border border-slate-200/20 px-[0.7rem] py-[0.35rem] opacity-20 transition duration-1000",
                     activeTab === id
-                      ? "bg-gradient-to-r from-sky-200/10 from-10% to-indigo-800/15 to-95% opacity-100"
-                      : null,
+                      ? "bg-gradient-to-r from-sky-200/10 from-10% to-indigo-800/15 to-95% opacity-100 transition duration-1000"
+                      : "",
                   )}
                 >
                   {tag}
