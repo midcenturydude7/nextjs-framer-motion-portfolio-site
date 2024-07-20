@@ -51,17 +51,6 @@ export default function DesignContent({
               {codeTabs.map(({ label, id }) => (
                 <li key={id}>
                   <motion.button
-                    layoutId="tab"
-                    transition={{
-                      layout: {
-                        duration: 0.4,
-                        ease: "easeOut",
-                        type: "spring",
-                        bounce: 0,
-                        damping: 50,
-                        stiffness: 500,
-                      },
-                    }}
                     onClick={() => handleSelectedTabClick(id)}
                     className={`relative
                       ${
@@ -85,7 +74,7 @@ export default function DesignContent({
                             stiffness: 500,
                           },
                         }}
-                        layoutId="underline"
+                        layoutId="slider"
                       />
                     ) : null}
                   </motion.button>
