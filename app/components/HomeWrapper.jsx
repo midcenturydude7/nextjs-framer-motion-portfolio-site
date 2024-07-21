@@ -28,7 +28,7 @@ export default function HomeWrapper() {
 
       {/* MAIN CONTENT: PROJECTS SECTION */}
       <div className="mt-20 w-[45%]">
-        <div className="flex justify-between gap-10 text-[1.2rem] text-slate-100/50">
+        <div className="flex justify-between gap-10 text-[1.2rem] text-sky-100/50">
           <div className="flex h-[300px] w-[30%] flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
             <h1>Project 1</h1>
           </div>

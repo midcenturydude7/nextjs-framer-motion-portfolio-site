@@ -74,7 +74,7 @@ export default function HeroContents() {
   ].map((n, idx) => ({ ...n, id: idx + 1 }));
 
   return (
-    <div className="flex h-[33%] w-[45%] text-slate-100/50">
+    <div className="flex h-[33%] w-[45%] text-sky-100/50">
       <div className="flex w-[45%] flex-col gap-[1.2rem] text-[1.2rem]">
         {/* TABS: DESIGN, CODE, BUILD */}
         {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
