@@ -25,11 +25,11 @@ export default function DesignContent({
     <div>
       {leftClick === false ? (
         <div className="h-full w-full">
-          <nav className="flex items-center justify-between pt-[6.2rem]">
+          <nav className="flex items-center justify-between pt-[6.075rem]">
             <div className="flex items-center">
               <button
                 onClick={() => handleLeftArrowClick("HomeContent")}
-                className="rounded-full border border-slate-200/20 p-2 opacity-70"
+                className="rounded-full border border-slate-200/20 p-2 opacity-70 transition duration-1000 hover:border-sky-300/50 hover:bg-indigo-200/20 hover:text-sky-300/50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ export default function DesignContent({
             <div className="flex items-center">
               <button
                 onClick={() => handleRightArrowClick("CodeContent")}
-                className="rounded-full border border-slate-200/20 p-2"
+                className="rounded-full border border-slate-200/20 p-2 opacity-70 transition duration-1000 hover:border-sky-300/50 hover:bg-indigo-200/20 hover:text-sky-300/50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
