@@ -13,7 +13,7 @@ export function heroContents({
   setActiveTab,
   setClicked,
 }) {
-  [
+  return [
     {
       label: "DesignContent",
       component: (

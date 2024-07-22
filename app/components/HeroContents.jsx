@@ -10,7 +10,7 @@ export default function HeroContents() {
   const [clicked, setClicked] = React.useState(false);
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
-  const [activeTab, setActiveTab] = React.useState("HomeContent");
+  const [activeTab, setActiveTab] = React.useState(null);
 
   function handleLeftArrowClick(label) {
     const heroContent = heroContents({
@@ -46,14 +46,13 @@ export default function HeroContents() {
       setClicked,
     });
 
-    const currentIndex = heroContent.findIndex((tab) => tab.label === label);
-    if (currentIndex !== -1) {
-      const newIndex =
-        currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
-      setActiveTab(heroContent[newIndex].label);
-      setRightClick(true);
-      setClicked(false);
-    }
+    const currentTab = heroContent.find(
+      ({ label }) => label === activeTab,
+    )?.component;
+
+    setActiveTab(currentTab[label]);
+    setRightClick(true);
+    setClicked(false);
   }
 
   const heroContent = heroContents({
@@ -67,8 +66,8 @@ export default function HeroContents() {
     setClicked,
   });
 
-  function handleTabClick(label) {
-    setActiveTab(label);
+  function handleTabClick(id) {
+    setActiveTab(id);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
@@ -87,7 +86,7 @@ export default function HeroContents() {
             onMouseLeave={() => {
               setSelected(null) && setClicked(false);
             }}
-            onClick={() => handleTabClick(label)}
+            onClick={() => handleTabClick(id)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
               activeTab === label &&
