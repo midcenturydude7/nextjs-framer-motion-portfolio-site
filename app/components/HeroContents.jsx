@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import HomeContent from "../components/HomeContent";
 import DesignContent from "../components/DesignContent";
 import CodeContent from "../components/CodeContent";
 import BuildContent from "../components/BuildContent";
 import { heroTabs } from "../lib/heroTabs";
+import { heroContents } from "../lib/heroContentData";
 import { cn } from "../lib/utils";
 
 export default function HeroContents() {
@@ -17,6 +19,7 @@ export default function HeroContents() {
     setActiveTab(id);
     setClicked(true);
     setLeftClick(false);
+    setRightClick(false);
   }
 
   function handleLeftArrowClick() {

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import HomeContent from "./HomeContent";
@@ -28,7 +29,7 @@ export default function DesignContent({
           <nav className="flex items-center justify-between pt-[6.075rem]">
             <div className="flex items-center">
               <button
-                onClick={() => handleLeftArrowClick("HomeContent")}
+                onClick={() => handleLeftArrowClick()}
                 className="rounded-full border border-slate-200/20 p-2 opacity-70 transition duration-1000 hover:border-sky-300/50 hover:bg-indigo-200/20 hover:text-sky-300/50"
               >
                 <svg
@@ -83,7 +84,7 @@ export default function DesignContent({
             </ul>
             <div className="flex items-center">
               <button
-                onClick={() => handleRightArrowClick("CodeContent")}
+                onClick={() => handleRightArrowClick()}
                 className="rounded-full border border-slate-200/20 p-2 opacity-70 transition duration-1000 hover:border-sky-300/50 hover:bg-indigo-200/20 hover:text-sky-300/50"
               >
                 <svg
