@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import HomeContent from "../components/HomeContent";
-import DesignContent from "../components/DesignContent";
-import CodeContent from "../components/CodeContent";
-import BuildContent from "../components/BuildContent";
+import HomeContent from "./HomeContent";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
 import { cn } from "../lib/utils";
@@ -13,68 +10,69 @@ export default function HeroContents() {
   const [clicked, setClicked] = React.useState(false);
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
-  const [activeTab, setActiveTab] = React.useState(null);
+  const [activeTab, setActiveTab] = React.useState("HomeContent");
 
-  function handleTabClick(id) {
-    setActiveTab(id);
+  function handleLeftArrowClick(label) {
+    const heroContent = heroContents({
+      clicked,
+      leftClick,
+      handleLeftArrowClick,
+      rightClick,
+      handleRightArrowClick,
+      activeTab,
+      setActiveTab,
+      setClicked,
+    });
+
+    const currentIndex = heroContent.findIndex((tab) => tab.label === label);
+    if (currentIndex !== -1) {
+      const newIndex =
+        currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1;
+      setActiveTab(heroContent[newIndex].label);
+      setLeftClick(true);
+      setClicked(false);
+    }
+  }
+
+  function handleRightArrowClick(label) {
+    const heroContent = heroContents({
+      clicked,
+      leftClick,
+      handleLeftArrowClick,
+      rightClick,
+      handleRightArrowClick,
+      activeTab,
+      setActiveTab,
+      setClicked,
+    });
+
+    const currentIndex = heroContent.findIndex((tab) => tab.label === label);
+    if (currentIndex !== -1) {
+      const newIndex =
+        currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
+      setActiveTab(heroContent[newIndex].label);
+      setRightClick(true);
+      setClicked(false);
+    }
+  }
+
+  const heroContent = heroContents({
+    clicked,
+    leftClick,
+    handleLeftArrowClick,
+    rightClick,
+    handleRightArrowClick,
+    activeTab,
+    setActiveTab,
+    setClicked,
+  });
+
+  function handleTabClick(label) {
+    setActiveTab(label);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
   }
-
-  function handleLeftArrowClick() {
-    setLeftClick(true);
-    setActiveTab(heroContent.find(({ label }) => label === "HomeContent")?.id);
-  }
-
-  function handleRightArrowClick() {
-    setRightClick(true);
-    setActiveTab(heroContent.find(({ label }) => label === "CodeContent")?.id);
-  }
-
-  const contentComponents = {
-    DesignContent: (
-      <DesignContent
-        clicked={clicked}
-        leftClick={leftClick}
-        handleLeftArrowClick={handleLeftArrowClick}
-        rightClick={rightClick}
-        handleRightArrowClick={handleRightArrowClick}
-        activeTab={activeTab}
-      />
-    ),
-    CodeContent: (
-      <CodeContent
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        clicked={clicked}
-        setClicked={setClicked}
-      />
-    ),
-    BuildContent: (
-      <BuildContent
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        clicked={clicked}
-        setClicked={setClicked}
-      />
-    ),
-    HomeContent: (
-      <HomeContent
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        clicked={clicked}
-        setClicked={setClicked}
-      />
-    ),
-  };
-
-  const heroContent = [
-    { label: "DesignContent", component: contentComponents.DesignContent },
-    { label: "CodeContent", component: contentComponents.CodeContent },
-    { label: "BuildContent", component: contentComponents.BuildContent },
-    { label: "HomeContent", component: contentComponents.HomeContent },
-  ].map((n, idx) => ({ ...n, id: idx + 1 }));
 
   return (
     <div className="flex h-[33%] w-[45%] text-sky-100/50">
@@ -83,18 +81,16 @@ export default function HeroContents() {
         {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
           <div
             key={id}
-            // onPointerEnter={() => setHovered(true)}
-            // onPointerLeave={() => setHovered(false)}
             onMouseEnter={() => {
               setSelected(id) && setClicked(false);
             }}
             onMouseLeave={() => {
               setSelected(null) && setClicked(false);
             }}
-            onClick={() => handleTabClick(id)}
+            onClick={() => handleTabClick(label)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
-              activeTab === id &&
+              activeTab === label &&
                 clicked &&
                 (leftClick === false || rightClick === false)
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
@@ -105,7 +101,7 @@ export default function HeroContents() {
               className={cn(
                 "flex items-end justify-between",
                 label === "Design" ? "w-[6.9rem]" : "w-[6rem]",
-                activeTab === id
+                activeTab === label
                   ? "text-sky-300/50"
                   : "group:hover:text-sky-300/50",
               )}
@@ -160,14 +156,13 @@ export default function HeroContents() {
       <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
         {/* HELLO SECTION */}
         {clicked && activeTab ? (
-          <div>{heroContent.find(({ id }) => id === activeTab)?.component}</div>
-        ) : (
           <div>
-            {
-              heroContent.find(({ label }) => label === "HomeContent")
-                ?.component
-            }
+            {heroContent.find(({ id }) => id === activeTab)?.component || (
+              <div>No content available</div>
+            )}
           </div>
+        ) : (
+          <HomeContent />
         )}
       </div>
     </div>

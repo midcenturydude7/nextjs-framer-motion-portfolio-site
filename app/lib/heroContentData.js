@@ -20,9 +20,9 @@ export function heroContents({
         <DesignContent
           clicked={clicked}
           leftClick={leftClick}
-          handleArrowLeftClick={handleArrowLeftClick}
+          handleArrowLeftClick={() => handleArrowLeftClick("HomeContent")}
           rightClick={rightClick}
-          handleRightArrowClick={handleRightArrowClick}
+          handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
         />
       ),
