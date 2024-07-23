@@ -40,38 +40,45 @@ export default function HeroContents() {
     // }
   }
 
-  function handleRightArrowClick(id) {
+  function handleRightArrowClick(label) {
     const heroContent = heroContents({
       clicked,
       leftClick,
+      setLeftClick,
       handleLeftArrowClick,
       rightClick,
+      setRightClick,
       handleRightArrowClick,
       activeTab,
       setActiveTab,
       setClicked,
     });
 
+    const newTab = heroContent.find((item) => item.label === label)?.component;
+
+    setActiveTab(newTab);
     setRightClick(true);
     setClicked(false);
 
-    const currentIndex = heroContent.findIndex((tab) => tab.id === id);
-    if (currentIndex !== -1) {
-      const newIndex =
-        currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
-      setActiveTab(heroContent[newIndex].id);
-      setRightClick(true);
-      setClicked(false);
-    }
+    // const currentIndex = heroContent.findIndex((tab) => tab.id === activeTab);
+    // if (currentIndex !== -1) {
+    //   const newIndex =
+    //     currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
+    //   setActiveTab(heroContent[newIndex].id);
+    //   setRightClick(true);
+    //   setClicked(false);
+    // }
 
-    console.log(activeTab);
+    console.log(clicked);
   }
 
   const heroContent = heroContents({
     clicked,
     leftClick,
+    setLeftClick,
     handleLeftArrowClick,
     rightClick,
+    setRightClick,
     handleRightArrowClick,
     activeTab,
     setActiveTab,
@@ -101,7 +108,7 @@ export default function HeroContents() {
             onClick={() => handleTabClick(id)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
-              activeTab === label &&
+              activeTab === id &&
                 clicked &&
                 (leftClick === false || rightClick === false)
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
@@ -112,7 +119,7 @@ export default function HeroContents() {
               className={cn(
                 "flex items-end justify-between",
                 label === "Design" ? "w-[6.9rem]" : "w-[6rem]",
-                activeTab === label
+                activeTab === id
                   ? "text-sky-300/50"
                   : "group:hover:text-sky-300/50",
               )}
@@ -167,13 +174,14 @@ export default function HeroContents() {
       <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
         {/* HELLO SECTION */}
         {clicked && activeTab ? (
-          <div>
-            {heroContent.find(({ id }) => id === activeTab)?.component || (
-              <div>No content available</div>
-            )}
-          </div>
+          <div>{heroContent.find(({ id }) => id === activeTab)?.component}</div>
         ) : (
-          <HomeContent />
+          <div>
+            {
+              heroContent.find(({ label }) => label === "HomeContent")
+                ?.component
+            }
+          </div>
         )}
       </div>
     </div>

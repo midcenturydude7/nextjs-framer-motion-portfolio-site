@@ -84,7 +84,7 @@ export default function DesignContent({
             </ul>
             <div className="flex items-center">
               <button
-                onClick={() => handleRightArrowClick(activeTab)}
+                onClick={handleRightArrowClick}
                 className="rounded-full border border-slate-200/20 p-2 opacity-70 transition duration-1000 hover:border-sky-300/50 hover:bg-indigo-200/20 hover:text-sky-300/50"
               >
                 <svg
