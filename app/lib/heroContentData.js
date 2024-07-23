@@ -21,12 +21,9 @@ export function heroContents({
       component: (
         <DesignContent
           clicked={clicked}
-          setClicked={setClicked}
           leftClick={leftClick}
-          setLeftClick={setLeftClick}
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           rightClick={rightClick}
-          setRightClick={setRightClick}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
         />
