@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HomeContent from "./HomeContent";
 import CodeContent from "./CodeContent";
-import { codeTabs } from "../lib/codeTabs";
+import { designTabs } from "../lib/codeTabs";
 import { cn } from "../lib/utils";
 
 export default function DesignContent({
@@ -15,7 +15,7 @@ export default function DesignContent({
   activeTab,
 }) {
   const [selectedTab, setSelectedTab] = React.useState(
-    codeTabs.find(({ label }) => label === "Tailwindcss")?.id,
+    designTabs.find(({ label }) => label === "Tailwindcss")?.id,
   );
 
   function handleSelectedTabClick(id) {
@@ -49,10 +49,10 @@ export default function DesignContent({
               </button>
             </div>
             <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/10 text-[1.175rem]">
-              {codeTabs.map(({ label, id }) => (
+              {designTabs.map(({ label, id }) => (
                 <li key={id}>
                   <motion.button
-                    onClick={handleSelectedTabClick}
+                    onClick={() => handleSelectedTabClick(id)}
                     className={`relative
                       ${
                         selectedTab === id
@@ -107,12 +107,12 @@ export default function DesignContent({
           <main>
             {selectedTab ? (
               <div>
-                {codeTabs.find(({ id }) => id === selectedTab)?.component}
+                {designTabs.find(({ id }) => id === selectedTab)?.component}
               </div>
             ) : (
               <div>
                 {
-                  codeTabs.find(({ label }) => label === "Tailwindcss")
+                  designTabs.find(({ label }) => label === "Tailwindcss")
                     ?.component
                 }
               </div>

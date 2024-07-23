@@ -4,7 +4,7 @@ import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
 import { cn } from "../lib/utils";
 
-export default function HeroContents() {
+export default function HeroContents({ setHovered }) {
   const [selected, setSelected] = React.useState(null);
   const [clicked, setClicked] = React.useState(false);
   const [leftClick, setLeftClick] = React.useState(false);
@@ -20,40 +20,22 @@ export default function HeroContents() {
 
   function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
-      clicked,
-      leftClick,
       setLeftClick,
-      handleLeftArrowClick,
-      rightClick,
-      setRightClick,
-      handleRightArrowClick,
-      activeTab,
       setActiveTab,
-      setClicked,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
-
     setActiveTab(newTab);
     setLeftClick(true);
   }
 
   function handleRightArrowClick(tabName) {
     const heroContent = heroContents({
-      clicked,
-      leftClick,
-      setLeftClick,
-      handleLeftArrowClick,
-      rightClick,
       setRightClick,
-      handleRightArrowClick,
-      activeTab,
       setActiveTab,
-      setClicked,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
-
     setActiveTab(newTab);
     setRightClick(true);
   }
@@ -78,6 +60,8 @@ export default function HeroContents() {
         {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
           <div
             key={id}
+            onPointerEnter={() => setHovered(true)}
+            onPointerLeave={() => setHovered(false)}
             onMouseEnter={() => {
               setSelected(id) && setClicked(false);
             }}

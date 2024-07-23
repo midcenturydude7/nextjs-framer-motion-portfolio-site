@@ -2,7 +2,7 @@ import CodeTailwindcss from "../components/CodeTailwindcss";
 import CodeAnimations from "../components/CodeAnimations";
 import CodeTools from "../components/CodeTools";
 
-export const codeTabs = [
+export const designTabs = [
   {
     label: "Tailwindcss",
     component: <CodeTailwindcss />,
