@@ -6,23 +6,28 @@ import BuildContent from "../components/BuildContent";
 export function heroContents({
   clicked,
   leftClick,
-  handleArrowLeftClick,
+  setLeftClick,
+  handleLeftArrowClick,
   rightClick,
+  setRightClick,
   handleRightArrowClick,
   activeTab,
   setActiveTab,
   setClicked,
 }) {
-  [
+  return [
     {
       label: "DesignContent",
       component: (
         <DesignContent
           clicked={clicked}
+          setClicked={setClicked}
           leftClick={leftClick}
-          handleArrowLeftClick={handleArrowLeftClick}
+          setLeftClick={setLeftClick}
+          handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           rightClick={rightClick}
-          handleRightArrowClick={handleRightArrowClick}
+          setRightClick={setRightClick}
+          handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
         />
       ),

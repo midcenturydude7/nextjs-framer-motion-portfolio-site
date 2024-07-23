@@ -1,9 +1,6 @@
 "use client";
 import React from "react";
-import HomeContent from "../components/HomeContent";
-import DesignContent from "../components/DesignContent";
-import CodeContent from "../components/CodeContent";
-import BuildContent from "../components/BuildContent";
+import HomeContent from "./HomeContent";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
 import { cn } from "../lib/utils";
@@ -14,6 +11,45 @@ export default function HeroContents() {
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
+
+  function handleLeftArrowClick(tabName) {
+    const heroContent = heroContents({
+      handleLeftArrowClick,
+      setActiveTab,
+      setLeftClick,
+    });
+
+    const newTab = heroContent.find(({ label }) => label === tabName)?.id;
+
+    setActiveTab(newTab);
+    setLeftClick(true);
+  }
+
+  function handleRightArrowClick(tabName) {
+    const heroContent = heroContents({
+      setRightClick,
+      handleRightArrowClick,
+      setActiveTab,
+    });
+
+    const newTab = heroContent.find(({ label }) => label === tabName)?.id;
+
+    setActiveTab(newTab);
+    setRightClick(true);
+  }
+
+  const heroContent = heroContents({
+    clicked,
+    leftClick,
+    setLeftClick,
+    handleLeftArrowClick,
+    rightClick,
+    setRightClick,
+    handleRightArrowClick,
+    activeTab,
+    setActiveTab,
+    setClicked,
+  });
 
   function handleTabClick(id) {
     setActiveTab(id);
@@ -83,8 +119,6 @@ export default function HeroContents() {
         {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
           <div
             key={id}
-            // onPointerEnter={() => setHovered(true)}
-            // onPointerLeave={() => setHovered(false)}
             onMouseEnter={() => {
               setSelected(id) && setClicked(false);
             }}
