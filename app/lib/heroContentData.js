@@ -6,7 +6,7 @@ import BuildContent from "../components/BuildContent";
 export function heroContents({
   clicked,
   leftClick,
-  handleArrowLeftClick,
+  handleLeftArrowClick,
   rightClick,
   handleRightArrowClick,
   activeTab,
@@ -15,19 +15,21 @@ export function heroContents({
 }) {
   return [
     {
+      id: 1,
       label: "DesignContent",
       component: (
         <DesignContent
           clicked={clicked}
           leftClick={leftClick}
-          handleArrowLeftClick={() => handleArrowLeftClick("HomeContent")}
+          handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           rightClick={rightClick}
-          handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
+          handleRightArrowClick={() => handleRightArrowClick(1)}
           activeTab={activeTab}
         />
       ),
     },
     {
+      id: 2,
       label: "CodeContent",
       component: (
         <CodeContent
@@ -39,6 +41,7 @@ export function heroContents({
       ),
     },
     {
+      id: 3,
       label: "BuildContent",
       component: (
         <BuildContent
@@ -50,6 +53,7 @@ export function heroContents({
       ),
     },
     {
+      id: 4,
       label: "HomeContent",
       component: (
         <HomeContent
@@ -60,5 +64,5 @@ export function heroContents({
         />
       ),
     },
-  ].map((n, idx) => ({ ...n, id: idx + 1 }));
+  ];
 }

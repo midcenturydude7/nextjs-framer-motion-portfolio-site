@@ -24,17 +24,23 @@ export default function HeroContents() {
       setClicked,
     });
 
-    const currentIndex = heroContent.findIndex((tab) => tab.label === label);
-    if (currentIndex !== -1) {
-      const newIndex =
-        currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1;
-      setActiveTab(heroContent[newIndex].label);
-      setLeftClick(true);
-      setClicked(false);
-    }
+    const newTab = heroContent.find((item) => item.label === label)?.component;
+
+    setActiveTab(newTab);
+    setLeftClick(true);
+    setClicked(false);
+
+    // const currentIndex = heroContent.findIndex((tab) => tab.label === label);
+    // if (currentIndex !== -1) {
+    //   const newIndex =
+    //     currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1;
+    //   setActiveTab(heroContent[newIndex].label);
+    //   setLeftClick(true);
+    //   setClicked(false);
+    // }
   }
 
-  function handleRightArrowClick(label) {
+  function handleRightArrowClick(id) {
     const heroContent = heroContents({
       clicked,
       leftClick,
@@ -46,13 +52,19 @@ export default function HeroContents() {
       setClicked,
     });
 
-    const currentTab = heroContent.find(
-      ({ label }) => label === activeTab,
-    )?.component;
-
-    setActiveTab(currentTab[label]);
     setRightClick(true);
     setClicked(false);
+
+    const currentIndex = heroContent.findIndex((tab) => tab.id === id);
+    if (currentIndex !== -1) {
+      const newIndex =
+        currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
+      setActiveTab(heroContent[newIndex].id);
+      setRightClick(true);
+      setClicked(false);
+    }
+
+    console.log(activeTab);
   }
 
   const heroContent = heroContents({
