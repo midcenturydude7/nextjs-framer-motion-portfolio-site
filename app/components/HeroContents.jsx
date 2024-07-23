@@ -12,64 +12,30 @@ export default function HeroContents() {
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
 
-  function handleLeftArrowClick(label) {
+  function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
-      clicked,
-      leftClick,
       handleLeftArrowClick,
-      rightClick,
-      handleRightArrowClick,
-      activeTab,
       setActiveTab,
-      setClicked,
+      setLeftClick,
     });
 
-    const newTab = heroContent.find((item) => item.label === label)?.component;
+    const newTab = heroContent.find(({ label }) => label === tabName)?.id;
 
     setActiveTab(newTab);
     setLeftClick(true);
-    setClicked(false);
-
-    // const currentIndex = heroContent.findIndex((tab) => tab.label === label);
-    // if (currentIndex !== -1) {
-    //   const newIndex =
-    //     currentIndex === 0 ? heroContent.length - 1 : currentIndex - 1;
-    //   setActiveTab(heroContent[newIndex].label);
-    //   setLeftClick(true);
-    //   setClicked(false);
-    // }
   }
 
-  function handleRightArrowClick(label) {
+  function handleRightArrowClick(tabName) {
     const heroContent = heroContents({
-      clicked,
-      leftClick,
-      setLeftClick,
-      handleLeftArrowClick,
-      rightClick,
       setRightClick,
       handleRightArrowClick,
-      activeTab,
       setActiveTab,
-      setClicked,
     });
 
-    const newTab = heroContent.find((item) => item.label === label)?.component;
+    const newTab = heroContent.find(({ label }) => label === tabName)?.id;
 
     setActiveTab(newTab);
     setRightClick(true);
-    setClicked(false);
-
-    // const currentIndex = heroContent.findIndex((tab) => tab.id === activeTab);
-    // if (currentIndex !== -1) {
-    //   const newIndex =
-    //     currentIndex === heroContent.length - 1 ? 0 : currentIndex + 1;
-    //   setActiveTab(heroContent[newIndex].id);
-    //   setRightClick(true);
-    //   setClicked(false);
-    // }
-
-    console.log(clicked);
   }
 
   const heroContent = heroContents({

@@ -17,7 +17,6 @@ export function heroContents({
 }) {
   return [
     {
-      id: 1,
       label: "DesignContent",
       component: (
         <DesignContent
@@ -34,7 +33,6 @@ export function heroContents({
       ),
     },
     {
-      id: 2,
       label: "CodeContent",
       component: (
         <CodeContent
@@ -46,7 +44,6 @@ export function heroContents({
       ),
     },
     {
-      id: 3,
       label: "BuildContent",
       component: (
         <BuildContent
@@ -58,7 +55,6 @@ export function heroContents({
       ),
     },
     {
-      id: 4,
       label: "HomeContent",
       component: (
         <HomeContent
@@ -69,5 +65,5 @@ export function heroContents({
         />
       ),
     },
-  ];
+  ].map((n, idx) => ({ ...n, id: idx + 1 }));
 }
