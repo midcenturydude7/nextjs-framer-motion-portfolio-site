@@ -22,14 +22,14 @@ export default function HeroContents() {
     setRightClick(false);
   }
 
-  function handleLeftArrowClick() {
+  function handleLeftArrowClick(tabName) {
     setLeftClick(true);
-    setActiveTab(heroContent.find(({ label }) => label === "HomeContent")?.id);
+    setActiveTab(heroContent.find(({ label }) => label === tabName)?.id);
   }
 
-  function handleRightArrowClick() {
+  function handleRightArrowClick(tabName) {
     setRightClick(true);
-    setActiveTab(heroContent.find(({ label }) => label === "CodeContent")?.id);
+    setActiveTab(heroContent.find(({ label }) => label === tabName)?.id);
   }
 
   const contentComponents = {
@@ -37,9 +37,9 @@ export default function HeroContents() {
       <DesignContent
         clicked={clicked}
         leftClick={leftClick}
-        handleLeftArrowClick={handleLeftArrowClick}
+        handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
         rightClick={rightClick}
-        handleRightArrowClick={handleRightArrowClick}
+        handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
         activeTab={activeTab}
       />
     ),
