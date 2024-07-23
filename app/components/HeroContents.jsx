@@ -58,6 +58,60 @@ export default function HeroContents() {
     setRightClick(false);
   }
 
+  function handleLeftArrowClick(tabName) {
+    setLeftClick(true);
+    setActiveTab(heroContent.find(({ label }) => label === tabName)?.id);
+  }
+
+  function handleRightArrowClick(tabName) {
+    setRightClick(true);
+    setActiveTab(heroContent.find(({ label }) => label === tabName)?.id);
+  }
+
+  const contentComponents = {
+    DesignContent: (
+      <DesignContent
+        clicked={clicked}
+        leftClick={leftClick}
+        handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
+        rightClick={rightClick}
+        handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
+        activeTab={activeTab}
+      />
+    ),
+    CodeContent: (
+      <CodeContent
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+    ),
+    BuildContent: (
+      <BuildContent
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+    ),
+    HomeContent: (
+      <HomeContent
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        clicked={clicked}
+        setClicked={setClicked}
+      />
+    ),
+  };
+
+  const heroContent = [
+    { label: "DesignContent", component: contentComponents.DesignContent },
+    { label: "CodeContent", component: contentComponents.CodeContent },
+    { label: "BuildContent", component: contentComponents.BuildContent },
+    { label: "HomeContent", component: contentComponents.HomeContent },
+  ].map((n, idx) => ({ ...n, id: idx + 1 }));
+
   return (
     <div className="flex h-[33%] w-[45%] text-sky-100/50">
       <div className="flex w-[45%] flex-col gap-[1.2rem] text-[1.2rem]">

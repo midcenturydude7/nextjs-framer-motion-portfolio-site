@@ -52,7 +52,7 @@ export default function DesignContent({
               {codeTabs.map(({ label, id }) => (
                 <li key={id}>
                   <motion.button
-                    onClick={() => handleSelectedTabClick(id)}
+                    onClick={handleSelectedTabClick}
                     className={`relative
                       ${
                         selectedTab === id
