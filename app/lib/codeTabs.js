@@ -1,18 +1,18 @@
-import CodeTailwindcss from "../components/CodeTailwindcss";
-import CodeAnimations from "../components/CodeAnimations";
-import CodeTools from "../components/CodeTools";
+import DesignTailwindcss from "../components/DesignTailwindcss";
+import DesignAnimations from "../components/DesignAnimations";
+import DesignTools from "../components/DesignTools";
 
 export const designTabs = [
   {
     label: "Tailwindcss",
-    component: <CodeTailwindcss />,
+    component: <DesignTailwindcss />,
   },
   {
     label: "Animations",
-    component: <CodeAnimations />,
+    component: <DesignAnimations />,
   },
   {
     label: "Tools",
-    component: <CodeTools />,
+    component: <DesignTools />,
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
