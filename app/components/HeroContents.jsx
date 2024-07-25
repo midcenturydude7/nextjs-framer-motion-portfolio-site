@@ -9,6 +9,7 @@ export default function HeroContents({ setHovered }) {
   const [clicked, setClicked] = React.useState(false);
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
+  const [activeTab, setActiveTab] = React.useState(null);
 
   function handleTabClick(id) {
     setActiveTab(id);
@@ -16,7 +17,6 @@ export default function HeroContents({ setHovered }) {
     setLeftClick(false);
     setRightClick(false);
   }
-  const [activeTab, setActiveTab] = React.useState(null);
 
   function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
