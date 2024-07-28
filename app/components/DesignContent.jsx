@@ -4,6 +4,7 @@ import TabNav from "./TabNav";
 import { designTabs } from "../lib/codeTabs";
 
 export default function DesignContent({
+  activeTab,
   leftClick,
   handleLeftArrowClick,
   handleRightArrowClick,
@@ -21,6 +22,7 @@ export default function DesignContent({
       {leftClick === false ? (
         <div className="h-full w-full">
           <TabNav
+            activeTab={activeTab}
             handleLeftArrowClick={handleLeftArrowClick}
             handleRightArrowClick={handleRightArrowClick}
             selectedTab={selectedTab}

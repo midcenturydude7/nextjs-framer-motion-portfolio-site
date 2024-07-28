@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import { designTabs } from "../lib/codeTabs";
 
-export default function TabMenu({ handleSelectedTabClick, selectedTab }) {
+export default function TabMenu({
+  handleSelectedTabClick,
+  selectedTab,
+  activeTab,
+}) {
   return (
     <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/10 text-[1.175rem]">
-      {designTabs.map(({ label, id }) => (
+      {activeTab ? (designTabs.map(({ label, id }) => (
         <li key={id}>
           <motion.button
             onClick={() => handleSelectedTabClick(id)}
@@ -35,7 +39,7 @@ export default function TabMenu({ handleSelectedTabClick, selectedTab }) {
             ) : null}
           </motion.button>
         </li>
-      ))}
+      ))) : null}
     </ul>
   );
 }

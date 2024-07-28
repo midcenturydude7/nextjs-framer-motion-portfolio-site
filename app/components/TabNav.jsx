@@ -1,10 +1,11 @@
-import TabMenu from "./TabMenu"
+import TabMenu from "./TabMenu";
 
 export default function TabNav({
   handleLeftArrowClick,
   handleRightArrowClick,
   selectedTab,
-  handleSelectedTabClick
+  handleSelectedTabClick,
+  activeTab,
 }) {
   return (
     <nav className="flex items-center justify-between pt-[6.075rem]">
@@ -29,7 +30,11 @@ export default function TabNav({
           </svg>
         </button>
       </div>
-      <TabMenu handleSelectedTabClick={handleSelectedTabClick} selectedTab={selectedTab} />
+      <TabMenu
+        handleSelectedTabClick={handleSelectedTabClick}
+        selectedTab={selectedTab}
+        activeTab={activeTab}
+      />
       <div className="flex items-center">
         <button
           onClick={handleRightArrowClick}
