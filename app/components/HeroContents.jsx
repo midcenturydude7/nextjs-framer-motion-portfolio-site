@@ -51,6 +51,7 @@ export default function HeroContents({ setHovered }) {
     activeTab,
     setActiveTab,
     setClicked,
+    handleTabClick,
   });
 
   return (

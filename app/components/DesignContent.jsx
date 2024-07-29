@@ -8,6 +8,7 @@ export default function DesignContent({
   leftClick,
   handleLeftArrowClick,
   handleRightArrowClick,
+  clicked,
 }) {
   const [selectedTab, setSelectedTab] = React.useState(
     designTabs.find(({ label }) => label === "Tailwindcss")?.id,
@@ -22,6 +23,7 @@ export default function DesignContent({
       {leftClick === false ? (
         <div className="h-full w-full">
           <TabNav
+            clicked={clicked}
             activeTab={activeTab}
             handleLeftArrowClick={handleLeftArrowClick}
             handleRightArrowClick={handleRightArrowClick}

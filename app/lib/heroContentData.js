@@ -6,10 +6,7 @@ import BuildContent from "../components/BuildContent";
 export function heroContents({
   clicked,
   leftClick,
-  setLeftClick,
   handleLeftArrowClick,
-  rightClick,
-  setRightClick,
   handleRightArrowClick,
   activeTab,
   setActiveTab,
@@ -21,12 +18,8 @@ export function heroContents({
       component: (
         <DesignContent
           clicked={clicked}
-          setClicked={setClicked}
           leftClick={leftClick}
-          setLeftClick={setLeftClick}
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
-          rightClick={rightClick}
-          setRightClick={setRightClick}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
         />
@@ -39,7 +32,6 @@ export function heroContents({
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           clicked={clicked}
-          setClicked={setClicked}
         />
       ),
     },
@@ -50,7 +42,6 @@ export function heroContents({
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           clicked={clicked}
-          setClicked={setClicked}
         />
       ),
     },
@@ -61,7 +52,6 @@ export function heroContents({
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           clicked={clicked}
-          setClicked={setClicked}
         />
       ),
     },

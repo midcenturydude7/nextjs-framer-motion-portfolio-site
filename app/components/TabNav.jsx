@@ -6,6 +6,8 @@ export default function TabNav({
   selectedTab,
   handleSelectedTabClick,
   activeTab,
+  handleTabClick,
+  clicked,
 }) {
   return (
     <nav className="flex items-center justify-between pt-[6.075rem]">
@@ -34,6 +36,8 @@ export default function TabNav({
         handleSelectedTabClick={handleSelectedTabClick}
         selectedTab={selectedTab}
         activeTab={activeTab}
+        handleTabClick={handleTabClick}
+        clicked={clicked}
       />
       <div className="flex items-center">
         <button
