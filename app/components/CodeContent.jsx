@@ -11,7 +11,7 @@ export default function CodeContent({
   labelName,
 }) {
   const [selectedTab, setSelectedTab] = React.useState(
-    codeItems.find(({ label }) => label === "Nextjs/React")?.id,
+    codeItems.find(({ label }) => label === "Nextjs")?.id,
   );
 
   function handleSelectedTabClick(id) {
