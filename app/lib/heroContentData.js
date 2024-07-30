@@ -21,7 +21,7 @@ export function heroContents({
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
-          labelName={"Design"}
+          labelName={labelName}
         />
       ),
     },
@@ -34,7 +34,7 @@ export function heroContents({
           handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
           handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
           activeTab={activeTab}
-          labelName={"Code"}
+          labelName={labelName}
         />
       ),
     },

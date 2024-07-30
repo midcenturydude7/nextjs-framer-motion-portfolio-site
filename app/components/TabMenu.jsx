@@ -1,5 +1,6 @@
 import DesignTabs from "./DesignTabs";
 import CodeDisciplines from "./CodeDisciplines";
+import { heroTabs } from "../lib/heroTabs";
 
 export default function TabMenu({
   handleSelectedTabClick,

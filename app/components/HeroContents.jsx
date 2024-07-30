@@ -13,13 +13,18 @@ export default function HeroContents({ setHovered }) {
   const [labelName, setLabelName] = React.useState("");
 
   function handleTabClick(id, label) {
+    const heroContent = heroContents({
+      setLeftClick,
+      setActiveTab,
+      labelName,
+    });
+
     setActiveTab(id);
     setLabelName(label);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
 
-    console.log(label);
     console.log(labelName);
   }
 
@@ -57,6 +62,7 @@ export default function HeroContents({ setHovered }) {
     setActiveTab,
     setClicked,
     handleTabClick,
+    labelName,
   });
 
   return (

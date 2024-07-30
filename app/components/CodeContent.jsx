@@ -31,16 +31,13 @@ export default function CodeContent({
           labelName={labelName}
         />
         <main>
-          {selectedTab ? (
+          {selectedTab && !activeTab ? (
             <div>
               {codeItems.find(({ id }) => id === selectedTab)?.component}
             </div>
           ) : (
             <div>
-              {
-                codeItems.find(({ label }) => label === "Nextjs/React")
-                  ?.component
-              }
+              {codeItems.find(({ label }) => label === "Nextjs")?.component}
             </div>
           )}
         </main>
