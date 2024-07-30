@@ -1,17 +1,17 @@
 "use client";
 import React from "react";
 import TabNav from "./TabNav";
-import { codeTabs } from "../lib/codeTabs";
+import { codeItems } from "../lib/codeTabs";
 
 export default function CodeContent({
   activeTab,
-  leftClick,
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
+  labelName,
 }) {
   const [selectedTab, setSelectedTab] = React.useState(
-    codeTabs.find(({ label }) => label === "Nextjs/React")?.id,
+    codeItems.find(({ label }) => label === "Nextjs/React")?.id,
   );
 
   function handleSelectedTabClick(id) {
@@ -28,16 +28,17 @@ export default function CodeContent({
           handleRightArrowClick={handleRightArrowClick}
           selectedTab={selectedTab}
           handleSelectedTabClick={handleSelectedTabClick}
+          labelName={labelName}
         />
         <main>
           {selectedTab ? (
             <div>
-              {codeTabs.find(({ id }) => id === selectedTab)?.component}
+              {codeItems.find(({ id }) => id === selectedTab)?.component}
             </div>
           ) : (
             <div>
               {
-                codeTabs.find(({ label }) => label === "Nextjs/React")
+                codeItems.find(({ label }) => label === "Nextjs/React")
                   ?.component
               }
             </div>

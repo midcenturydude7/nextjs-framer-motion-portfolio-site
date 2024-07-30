@@ -10,12 +10,17 @@ export default function HeroContents({ setHovered }) {
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
+  const [labelName, setLabelName] = React.useState("");
 
-  function handleTabClick(id) {
+  function handleTabClick(id, label) {
     setActiveTab(id);
+    setLabelName(label);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
+
+    console.log(label);
+    console.log(labelName);
   }
 
   function handleLeftArrowClick(tabName) {
@@ -69,7 +74,7 @@ export default function HeroContents({ setHovered }) {
             onMouseLeave={() => {
               setSelected(null) && setClicked(false);
             }}
-            onClick={() => handleTabClick(id)}
+            onClick={() => handleTabClick(id, label)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
               activeTab === id &&

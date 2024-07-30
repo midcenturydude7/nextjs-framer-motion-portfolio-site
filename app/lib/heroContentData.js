@@ -10,7 +10,7 @@ export function heroContents({
   handleRightArrowClick,
   activeTab,
   setActiveTab,
-  setClicked,
+  labelName,
 }) {
   return [
     {
@@ -18,10 +18,10 @@ export function heroContents({
       component: (
         <DesignContent
           clicked={clicked}
-          leftClick={leftClick}
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
+          labelName={"Design"}
         />
       ),
     },
@@ -29,9 +29,12 @@ export function heroContents({
       label: "CodeContent",
       component: (
         <CodeContent
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
           clicked={clicked}
+          leftClick={leftClick}
+          handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
+          handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
+          activeTab={activeTab}
+          labelName={"Code"}
         />
       ),
     },
