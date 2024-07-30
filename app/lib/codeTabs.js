@@ -22,15 +22,15 @@ export const designTabs = [
 
 export const codeItems = [
   {
-    label: "Nextjs/React",
+    label: "Nextjs",
     component: <CodeFrameworks />,
   },
   {
-    label: "Javascript",
+    label: "React",
     component: <CodeJavascript />,
   },
   {
-    label: "Data",
+    label: "Javascript",
     component: <CodeDataStructures />,
   },
 ];
