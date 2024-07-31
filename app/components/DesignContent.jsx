@@ -14,9 +14,9 @@ export default function DesignContent({
   setSelectedTab,
   handleSelectedTabClick,
 }) {
-  // const [selectedTab, setSelectedTab] = React.useState(
-  //   designTabs.find(({ label }) => label === "Tailwindcss")?.id,
-  // );
+  const initialTab = designTabs.find(
+    ({ label }) => label === "Tailwindcss",
+  )?.id;
 
   return (
     <div className="h-full w-full">
@@ -31,16 +31,28 @@ export default function DesignContent({
         labelName={labelName}
       />
       <main>
-        {selectedTab ? (
+        {activeTab && clicked ? (
           <div>
-            {designTabs.find(({ id }) => id === selectedTab)?.component}
+            {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
           </div>
         ) : (
           <div>
-            {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
+            {designTabs.find(({ id }) => id === selectedTab)?.component}
           </div>
         )}
       </main>
     </div>
   );
+}
+
+{
+  /* {selectedTab ? (
+    <div>
+      {designTabs.find(({ id }) => id === selectedTab)?.component}
+    </div>
+  ) : (
+    <div>
+      {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
+    </div>
+  )} */
 }
