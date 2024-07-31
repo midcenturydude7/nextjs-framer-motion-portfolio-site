@@ -9,42 +9,34 @@ export default function CodeContent({
   handleRightArrowClick,
   clicked,
   labelName,
+  selectedTab,
+  handleSelectedTabClick,
+  setSelectedTab,
 }) {
-  const [selectedTab, setSelectedTab] = React.useState(
-    codeItems.find(({ label }) => label === "Nextjs")?.id,
-  );
-
-  function handleSelectedTabClick(id) {
-    setSelectedTab(id);
-  }
+  // const [selectedTab, setSelectedTab] = React.useState(
+  //   codeItems.find(({ label }) => label === "Nextjs")?.id,
+  // );
 
   return (
-    <div>
-      <div className="h-full w-full">
-        <TabNav
-          clicked={clicked}
-          activeTab={activeTab}
-          handleLeftArrowClick={handleLeftArrowClick}
-          handleRightArrowClick={handleRightArrowClick}
-          selectedTab={selectedTab}
-          handleSelectedTabClick={handleSelectedTabClick}
-          labelName={labelName}
-        />
-        <main>
-          {selectedTab && !activeTab ? (
-            <div>
-              {codeItems.find(({ id }) => id === selectedTab)?.component}
-            </div>
-          ) : (
-            <div>
-              {codeItems.find(({ label }) => label === "Nextjs")?.component}
-            </div>
-          )}
-        </main>
-      </div>
-
-      {/* {leftClick && activeTab && !clicked ? <HomeContent /> : null}
-      {rightClick && activeTab && !clicked ? <CodeContent /> : null} */}
+    <div className="h-full w-full">
+      <TabNav
+        clicked={clicked}
+        activeTab={activeTab}
+        handleLeftArrowClick={handleLeftArrowClick}
+        handleRightArrowClick={handleRightArrowClick}
+        selectedTab={selectedTab}
+        handleSelectedTabClick={handleSelectedTabClick}
+        labelName={labelName}
+      />
+      <main>
+        {selectedTab ? (
+          <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
+        ) : (
+          <div>
+            {codeItems.find(({ label }) => label === "Nextjs")?.component}
+          </div>
+        )}
+      </main>
     </div>
   );
 }

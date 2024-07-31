@@ -10,22 +10,28 @@ export default function HeroContents({ setHovered }) {
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
+  const [selectedTab, setSelectedTab] = React.useState(null);
   const [labelName, setLabelName] = React.useState("");
 
-  function handleTabClick(id, label) {
+  function handleTabClick(id, labelTitle) {
     const heroContent = heroContents({
       setLeftClick,
+      setRightClick,
       setActiveTab,
-      labelName,
+      setLabelName,
+      setClicked,
     });
 
+    const currentLabel = heroTabs.find(({ label }) => label === labelTitle)?.id;
+
     setActiveTab(id);
-    setLabelName(label);
+    setLabelName(currentLabel);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
 
-    console.log(labelName);
+    console.log(currentLabel);
+    console.log(labelTitle);
   }
 
   function handleLeftArrowClick(tabName) {
@@ -50,6 +56,10 @@ export default function HeroContents({ setHovered }) {
     setRightClick(true);
   }
 
+  function handleSelectedTabClick(id) {
+    setSelectedTab(id);
+  }
+
   const heroContent = heroContents({
     clicked,
     leftClick,
@@ -63,6 +73,9 @@ export default function HeroContents({ setHovered }) {
     setClicked,
     handleTabClick,
     labelName,
+    selectedTab,
+    setSelectedTab,
+    handleSelectedTabClick,
   });
 
   return (
