@@ -33,4 +33,4 @@ export const codeItems = [
     label: "Javascript",
     component: <CodeDataStructures />,
   },
-];
+].map((n, idx) => ({ ...n, id: idx + 1 }));;

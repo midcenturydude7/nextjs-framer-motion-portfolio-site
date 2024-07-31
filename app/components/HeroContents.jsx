@@ -22,17 +22,22 @@ export default function HeroContents({ setHovered }) {
       setClicked,
     });
 
-    const currentLabel = heroTabs.find(({ label }) => label === labelTitle)?.id;
+    const currentLabel = heroTabs.find(
+      ({ label }) => label === labelTitle,
+    )?.label;
 
     setActiveTab(id);
     setLabelName(currentLabel);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
-
-    console.log(currentLabel);
-    console.log(labelTitle);
   }
+
+  React.useEffect(() => {
+    // Example side effect: Log labelName change
+    console.log("Tab clicked:", labelName);
+    // You can add any other logic you need to handle when labelName changes
+  }, [labelName]);
 
   function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
