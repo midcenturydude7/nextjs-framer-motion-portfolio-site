@@ -11,7 +11,7 @@ export default function TabMenu({
 }) {
   return (
     <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/10 text-[1.175rem]">
-      {activeTab && clicked && labelName === "Design" ? (
+      {activeTab && labelName === "Design" ? (
         <DesignTabs
           handleTabClick={handleTabClick}
           handleSelectedTabClick={handleSelectedTabClick}
@@ -20,6 +20,7 @@ export default function TabMenu({
       ) : null}
       {activeTab && clicked && labelName === "Code" ? (
         <CodeDisciplines
+          handleTabClick={handleTabClick}
           handleSelectedTabClick={handleSelectedTabClick}
           selectedTab={selectedTab}
         />

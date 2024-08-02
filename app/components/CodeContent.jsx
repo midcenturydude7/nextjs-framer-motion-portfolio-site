@@ -5,9 +5,12 @@ import { codeItems } from "../lib/codeTabs";
 
 export default function CodeContent({
   activeTab,
+  setActiveTab,
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
+  leftClick,
+  rightClick,
   labelName,
   selectedTab,
   handleSelectedTabClick,
@@ -22,6 +25,7 @@ export default function CodeContent({
       <TabNav
         clicked={clicked}
         activeTab={activeTab}
+        setActiveTab={setActiveTab}
         handleLeftArrowClick={handleLeftArrowClick}
         handleRightArrowClick={handleRightArrowClick}
         selectedTab={selectedTab}
@@ -29,12 +33,12 @@ export default function CodeContent({
         labelName={labelName}
       />
       <main>
-        {selectedTab ? (
-          <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
-        ) : (
+        {selectedTab && clicked ? (
           <div>
             {codeItems.find(({ label }) => label === "Nextjs")?.component}
           </div>
+        ) : (
+          <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
         )}
       </main>
     </div>

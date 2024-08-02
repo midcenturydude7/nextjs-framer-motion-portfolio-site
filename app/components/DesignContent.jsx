@@ -5,24 +5,24 @@ import { designTabs } from "../lib/codeTabs";
 
 export default function DesignContent({
   activeTab,
+  setActiveTab,
   handleTabClick,
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
+  leftClick,
+  rightClick,
   labelName,
   selectedTab,
   setSelectedTab,
   handleSelectedTabClick,
 }) {
-  const initialTab = designTabs.find(
-    ({ label }) => label === "Tailwindcss",
-  )?.id;
-
   return (
     <div className="h-full w-full">
       <TabNav
         clicked={clicked}
         activeTab={activeTab}
+        setActiveTab={setActiveTab}
         handleTabClick={handleTabClick}
         handleLeftArrowClick={handleLeftArrowClick}
         handleRightArrowClick={handleRightArrowClick}
@@ -31,7 +31,7 @@ export default function DesignContent({
         labelName={labelName}
       />
       <main>
-        {activeTab && clicked ? (
+        {selectedTab && clicked ? (
           <div>
             {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
           </div>
@@ -43,16 +43,4 @@ export default function DesignContent({
       </main>
     </div>
   );
-}
-
-{
-  /* {selectedTab ? (
-    <div>
-      {designTabs.find(({ id }) => id === selectedTab)?.component}
-    </div>
-  ) : (
-    <div>
-      {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
-    </div>
-  )} */
 }

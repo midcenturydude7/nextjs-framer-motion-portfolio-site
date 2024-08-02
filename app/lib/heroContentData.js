@@ -49,7 +49,12 @@ export function heroContents({
       component: (
         <CodeContent
           clicked={clicked}
+          setClicked={setClicked}
           leftClick={leftClick}
+          setLeftClick={setLeftClick}
+          rightClick={rightClick}
+          setRightClick={setRightClick}
+          handleTabClick={handleTabClick}
           handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
           handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
           activeTab={activeTab}

@@ -2,6 +2,7 @@
 import React from "react";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
+import { designTabs } from "../lib/codeTabs";
 import { cn } from "../lib/utils";
 
 export default function HeroContents({ setHovered }) {
@@ -20,6 +21,8 @@ export default function HeroContents({ setHovered }) {
       setActiveTab,
       setLabelName,
       setClicked,
+      setSelectedTab,
+      selectedTab,
     });
 
     const currentLabel = heroTabs.find(
@@ -29,25 +32,44 @@ export default function HeroContents({ setHovered }) {
     setActiveTab(id);
     setLabelName(currentLabel);
     setClicked(true);
-    setLeftClick(false);
-    setRightClick(false);
+    // setLeftClick(false);
+    // setRightClick(false);
+    setSelectedTab(1);
   }
 
   React.useEffect(() => {
     // Example side effect: Log labelName change
+    // if (labelName === "Design") {
+    //   setSelectedTab(
+    //     designTabs.find(({ label }) => label === "Tailwindcss")?.id,
+    //   );
+    // }
+
     console.log("Tab clicked:", labelName);
+    console.log("Selected tab:", selectedTab);
     // You can add any other logic you need to handle when labelName changes
-  }, [labelName]);
+  }, [labelName, selectedTab]);
 
   function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
       setLeftClick,
       setActiveTab,
+      selectedTab,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
     setLeftClick(true);
+
+    // const arrowDesign = heroContent.find(
+    //   ({ label }) => label === "DesignContent",
+    // )?.component;
+
+    // if (labelName === "Code") {
+    //   setActiveTab(arrowDesign);
+    // }
+
+    // console.log("Left arrow clicked:", arrowDesign);
   }
 
   function handleRightArrowClick(tabName) {
