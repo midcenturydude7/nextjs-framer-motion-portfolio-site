@@ -2,7 +2,7 @@
 import React from "react";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
-import { designTabs } from "../lib/codeTabs";
+import { designTabs, codeItems } from "../lib/codeTabs";
 import { cn } from "../lib/utils";
 
 export default function HeroContents({ setHovered }) {
@@ -12,6 +12,7 @@ export default function HeroContents({ setHovered }) {
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
   const [selectedTab, setSelectedTab] = React.useState(null);
+  const [activeNav, setActiveNav] = React.useState(null);
   const [labelName, setLabelName] = React.useState("");
 
   function handleTabClick(id, labelTitle) {
@@ -32,60 +33,53 @@ export default function HeroContents({ setHovered }) {
     setActiveTab(id);
     setLabelName(currentLabel);
     setClicked(true);
-    // setLeftClick(false);
-    // setRightClick(false);
+    setLeftClick(false);
+    setRightClick(false);
     setSelectedTab(1);
   }
 
-  React.useEffect(() => {
-    // Example side effect: Log labelName change
-    // if (labelName === "Design") {
-    //   setSelectedTab(
-    //     designTabs.find(({ label }) => label === "Tailwindcss")?.id,
-    //   );
-    // }
-
-    console.log("Tab clicked:", labelName);
-    console.log("Selected tab:", selectedTab);
-    // You can add any other logic you need to handle when labelName changes
-  }, [labelName, selectedTab]);
-
-  function handleLeftArrowClick(tabName) {
+  function handleLeftArrowClick(tabName, navName) {
     const heroContent = heroContents({
       setLeftClick,
       setActiveTab,
-      selectedTab,
+      setActiveNav,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
+    const newNav = heroContent.find(({ label }) => label === navName)?.id;
+    setActiveNav(newNav);
     setLeftClick(true);
 
-    // const arrowDesign = heroContent.find(
-    //   ({ label }) => label === "DesignContent",
-    // )?.component;
-
-    // if (labelName === "Code") {
-    //   setActiveTab(arrowDesign);
-    // }
-
-    // console.log("Left arrow clicked:", arrowDesign);
+    console.log("Left arrow clicked:", tabName);
+    console.log("Left arrow clicked:", navName);
   }
 
-  function handleRightArrowClick(tabName) {
+  function handleRightArrowClick(tabName, navName) {
     const heroContent = heroContents({
       setRightClick,
       setActiveTab,
+      setActiveNav,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
+    const newNav = heroContent.find(({ label }) => label === navName)?.id;
+    setActiveNav(newNav);
     setRightClick(true);
+
+    console.log("Right arrow clicked:", tabName);
+    console.log("Right arrow clicked:", navName);
   }
 
   function handleSelectedTabClick(id) {
     setSelectedTab(id);
   }
+
+  React.useEffect(() => {
+    console.log("Tab clicked:", labelName);
+    console.log("Selected tab:", selectedTab);
+  }, [labelName, selectedTab, activeNav]);
 
   const heroContent = heroContents({
     clicked,

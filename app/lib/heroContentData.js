@@ -20,6 +20,8 @@ export function heroContents({
   selectedTab,
   setSelectedTab,
   handleSelectedTabClick,
+  activeNav,
+  setActiveNav,
 }) {
   return [
     {
@@ -34,13 +36,15 @@ export function heroContents({
           setRightClick={setRightClick}
           handleTabClick={handleTabClick}
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
-          handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
+          handleRightArrowClick={() => handleRightArrowClick("CodeContent", "Code")}
           activeTab={activeTab}
           labelName={labelName}
           setLabelName={setLabelName}
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           handleSelectedTabClick={handleSelectedTabClick}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
         />
       ),
     },
@@ -56,13 +60,15 @@ export function heroContents({
           setRightClick={setRightClick}
           handleTabClick={handleTabClick}
           handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
-          handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
+          handleRightArrowClick={() => handleRightArrowClick("BuildContent", "Build")}
           activeTab={activeTab}
           labelName={labelName}
           setLabelName={setLabelName}
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           handleSelectedTabClick={handleSelectedTabClick}
+          activeNav={activeNav}
+          setActiveNav={setActiveNav}
         />
       ),
     },
