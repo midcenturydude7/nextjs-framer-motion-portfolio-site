@@ -16,6 +16,7 @@ export default function DesignContent({
   selectedTab,
   setSelectedTab,
   handleSelectedTabClick,
+  activeNav,
 }) {
   return (
     <div className="h-full w-full">
@@ -29,6 +30,7 @@ export default function DesignContent({
         selectedTab={selectedTab}
         handleSelectedTabClick={handleSelectedTabClick}
         labelName={labelName}
+        activeNav={activeNav}
       />
       <main>
         {selectedTab && clicked ? (

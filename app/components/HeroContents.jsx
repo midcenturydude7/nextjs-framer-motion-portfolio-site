@@ -79,6 +79,7 @@ export default function HeroContents({ setHovered }) {
   React.useEffect(() => {
     console.log("Tab clicked:", labelName);
     console.log("Selected tab:", selectedTab);
+    console.log("Active nav:", activeNav);
   }, [labelName, selectedTab, activeNav]);
 
   const heroContent = heroContents({
