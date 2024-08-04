@@ -33,12 +33,12 @@ export default function CodeContent({
         labelName={labelName}
       />
       <main>
-        {selectedTab && clicked ? (
-          <div>
-            {codeItems.find(({ label }) => label === "Nextjs")?.component}
-          </div>
-        ) : (
+        {selectedTab ? (
           <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
+        ) : (
+          <div>
+            {codeItems.find(({ label }) => label === "Tailwindcss")?.component}
+          </div>
         )}
       </main>
     </div>
