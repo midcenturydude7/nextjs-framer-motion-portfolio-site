@@ -36,7 +36,7 @@ export function heroContents({
           setRightClick={setRightClick}
           handleTabClick={handleTabClick}
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
-          handleRightArrowClick={() => handleRightArrowClick("CodeContent", "Code")}
+          handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
           labelName={labelName}
           setLabelName={setLabelName}
@@ -60,7 +60,7 @@ export function heroContents({
           setRightClick={setRightClick}
           handleTabClick={handleTabClick}
           handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
-          handleRightArrowClick={() => handleRightArrowClick("BuildContent", "Build")}
+          handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
           activeTab={activeTab}
           labelName={labelName}
           setLabelName={setLabelName}

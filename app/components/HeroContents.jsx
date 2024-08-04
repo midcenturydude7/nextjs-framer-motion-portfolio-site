@@ -38,38 +38,42 @@ export default function HeroContents({ setHovered }) {
     setSelectedTab(1);
   }
 
-  function handleLeftArrowClick(tabName, navName) {
+  function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
       setLeftClick,
       setActiveTab,
-      setActiveNav,
+      setLabelName,
+      setSelectedTab,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
-    const newNav = heroContent.find(({ label }) => label === navName)?.id;
-    setActiveNav(newNav);
-    setLeftClick(true);
 
-    console.log("Left arrow clicked:", tabName);
-    console.log("Left arrow clicked:", navName);
+    const currentLabel = heroTabs.find(({ id }) => id === newTab)?.label;
+    setLabelName(currentLabel);
+    setLeftClick(false);
+    setSelectedTab(1);
+
+    console.log("Left arrow clicked:", tabName, newTab, labelName);
   }
 
-  function handleRightArrowClick(tabName, navName) {
+  function handleRightArrowClick(tabName) {
     const heroContent = heroContents({
       setRightClick,
       setActiveTab,
-      setActiveNav,
+      setLabelName,
+      setSelectedTab,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
-    const newNav = heroContent.find(({ label }) => label === navName)?.id;
-    setActiveNav(newNav);
-    setRightClick(true);
 
-    console.log("Right arrow clicked:", tabName);
-    console.log("Right arrow clicked:", navName);
+    const currentLabel = heroTabs.find(({ id }) => id === newTab)?.label;
+    setLabelName(currentLabel);
+    setRightClick(false);
+    setSelectedTab(1);
+
+    console.log("Right arrow clicked:", tabName, newTab, labelName);
   }
 
   function handleSelectedTabClick(id) {
@@ -77,10 +81,9 @@ export default function HeroContents({ setHovered }) {
   }
 
   React.useEffect(() => {
-    console.log("Tab clicked:", labelName);
-    console.log("Selected tab:", selectedTab);
-    console.log("Active nav:", activeNav);
-  }, [labelName, selectedTab, activeNav]);
+    // console.log("Tab clicked:", labelName);
+    // console.log("Selected tab:", selectedTab);
+  }, [labelName, selectedTab, activeTab]);
 
   const heroContent = heroContents({
     clicked,
