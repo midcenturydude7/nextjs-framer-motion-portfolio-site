@@ -4,6 +4,9 @@ import DesignTools from "../components/DesignTools";
 import CodeFrameworks from "../components/CodeFrameworks";
 import CodeJavascript from "../components/CodeJavascript";
 import CodeDataStructures from "../components/CodeDataStructures";
+import BuildFullStack from "../components/BuildFullStack";
+import BuildAiMl from "../components/BuildAiMl";
+import BuildDataViz from "../components/BuildDataViz";
 
 export const designTabs = [
   {
@@ -34,3 +37,18 @@ export const codeItems = [
     component: <CodeDataStructures />,
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));;
+
+export const buildTabs = [
+  {
+    label: "Full Stack",
+    component: <BuildFullStack />,
+  },
+  {
+    label: "AI & ML",
+    component: <BuildAiMl />,
+  },
+  {
+    label: "Data Viz",
+    component: <BuildDataViz />,
+  },
+].map((n, idx) => ({ ...n, id: idx + 1 }));

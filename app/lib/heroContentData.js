@@ -20,8 +20,6 @@ export function heroContents({
   selectedTab,
   setSelectedTab,
   handleSelectedTabClick,
-  activeNav,
-  setActiveNav,
 }) {
   return [
     {
@@ -29,7 +27,6 @@ export function heroContents({
       component: (
         <DesignContent
           clicked={clicked}
-          setClicked={setClicked}
           leftClick={leftClick}
           setLeftClick={setLeftClick}
           rightClick={rightClick}
@@ -38,6 +35,7 @@ export function heroContents({
           handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
+          setActiveTab={setActiveTab}
           labelName={labelName}
           setLabelName={setLabelName}
           selectedTab={selectedTab}
@@ -51,7 +49,6 @@ export function heroContents({
       component: (
         <CodeContent
           clicked={clicked}
-          setClicked={setClicked}
           leftClick={leftClick}
           setLeftClick={setLeftClick}
           rightClick={rightClick}
@@ -60,6 +57,7 @@ export function heroContents({
           handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
           handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
           activeTab={activeTab}
+          setActiveTab={setActiveTab}
           labelName={labelName}
           setLabelName={setLabelName}
           selectedTab={selectedTab}
@@ -72,9 +70,21 @@ export function heroContents({
       label: "BuildContent",
       component: (
         <BuildContent
+          clicked={clicked}
+          leftClick={leftClick}
+          setLeftClick={setLeftClick}
+          rightClick={rightClick}
+          setRightClick={setRightClick}
+          handleTabClick={handleTabClick}
+          handleLeftArrowClick={() => handleLeftArrowClick("CodeContent")}
+          handleRightArrowClick={() => handleRightArrowClick("HomeContent")}
           activeTab={activeTab}
           setActiveTab={setActiveTab}
-          clicked={clicked}
+          labelName={labelName}
+          setLabelName={setLabelName}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+          handleSelectedTabClick={handleSelectedTabClick}
         />
       ),
     },

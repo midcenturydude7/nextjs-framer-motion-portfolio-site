@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import TabNav from "./TabNav";
 import { codeItems } from "../lib/codeTabs";
 
@@ -9,17 +7,10 @@ export default function CodeContent({
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
-  leftClick,
-  rightClick,
   labelName,
   selectedTab,
   handleSelectedTabClick,
-  setSelectedTab,
 }) {
-  // const [selectedTab, setSelectedTab] = React.useState(
-  //   codeItems.find(({ label }) => label === "Nextjs")?.id,
-  // );
-
   return (
     <div className="h-full w-full">
       <TabNav
@@ -33,12 +24,8 @@ export default function CodeContent({
         labelName={labelName}
       />
       <main>
-        {selectedTab ? (
+        {selectedTab && (
           <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
-        ) : (
-          <div>
-            {codeItems.find(({ label }) => label === "Tailwindcss")?.component}
-          </div>
         )}
       </main>
     </div>

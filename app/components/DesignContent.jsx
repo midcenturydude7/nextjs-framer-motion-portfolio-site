@@ -1,7 +1,4 @@
-"use client";
-import React from "react";
 import TabNav from "./TabNav";
-import DesignTabs from "./DesignTabs";
 import { designTabs } from "../lib/codeTabs";
 
 export default function DesignContent({
@@ -11,13 +8,9 @@ export default function DesignContent({
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
-  leftClick,
-  rightClick,
   labelName,
   selectedTab,
-  setSelectedTab,
   handleSelectedTabClick,
-  activeNav,
 }) {
   return (
     <div className="h-full w-full">
@@ -31,16 +24,11 @@ export default function DesignContent({
         selectedTab={selectedTab}
         handleSelectedTabClick={handleSelectedTabClick}
         labelName={labelName}
-        activeNav={activeNav}
       />
       <main>
-        {selectedTab ? (
+        {selectedTab && (
           <div>
             {designTabs.find(({ id }) => id === selectedTab)?.component}
-          </div>
-        ) : (
-          <div>
-            {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
           </div>
         )}
       </main>

@@ -2,7 +2,6 @@
 import React from "react";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
-import { designTabs, codeItems } from "../lib/codeTabs";
 import { cn } from "../lib/utils";
 
 export default function HeroContents({ setHovered }) {
@@ -15,16 +14,6 @@ export default function HeroContents({ setHovered }) {
   const [labelName, setLabelName] = React.useState("");
 
   function handleTabClick(id, labelTitle) {
-    const heroContent = heroContents({
-      setLeftClick,
-      setRightClick,
-      setActiveTab,
-      setLabelName,
-      setClicked,
-      setSelectedTab,
-      selectedTab,
-    });
-
     const currentLabel = heroTabs.find(
       ({ label }) => label === labelTitle,
     )?.label;
@@ -79,10 +68,7 @@ export default function HeroContents({ setHovered }) {
     setSelectedTab(id);
   }
 
-  React.useEffect(() => {
-    // console.log("Tab clicked:", labelName);
-    // console.log("Selected tab:", selectedTab);
-  }, [labelName, selectedTab, activeTab]);
+  React.useEffect(() => {}, [labelName, selectedTab, activeTab]);
 
   const heroContent = heroContents({
     clicked,
@@ -94,7 +80,6 @@ export default function HeroContents({ setHovered }) {
     handleRightArrowClick,
     activeTab,
     setActiveTab,
-    setClicked,
     handleTabClick,
     labelName,
     setLabelName,
