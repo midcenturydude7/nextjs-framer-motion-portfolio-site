@@ -34,13 +34,13 @@ export default function DesignContent({
         activeNav={activeNav}
       />
       <main>
-        {selectedTab && clicked ? (
+        {selectedTab ? (
           <div>
-            {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
+            {designTabs.find(({ id }) => id === selectedTab)?.component}
           </div>
         ) : (
           <div>
-            {designTabs.find(({ id }) => id === selectedTab)?.component}
+            {designTabs.find(({ label }) => label === "Tailwindcss")?.component}
           </div>
         )}
       </main>
