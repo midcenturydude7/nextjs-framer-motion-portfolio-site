@@ -43,8 +43,6 @@ export function heroContents({
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           handleSelectedTabClick={handleSelectedTabClick}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
         />
       ),
     },
@@ -67,8 +65,6 @@ export function heroContents({
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           handleSelectedTabClick={handleSelectedTabClick}
-          activeNav={activeNav}
-          setActiveNav={setActiveNav}
         />
       ),
     },

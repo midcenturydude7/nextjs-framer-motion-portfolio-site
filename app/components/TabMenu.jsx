@@ -4,7 +4,6 @@ import CodeDisciplines from "./CodeDisciplines";
 export default function TabMenu({
   handleSelectedTabClick,
   selectedTab,
-  activeTab,
   clicked,
   labelName,
   handleTabClick,

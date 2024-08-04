@@ -12,7 +12,6 @@ export default function HeroContents({ setHovered }) {
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
   const [selectedTab, setSelectedTab] = React.useState(null);
-  const [activeNav, setActiveNav] = React.useState(null);
   const [labelName, setLabelName] = React.useState("");
 
   function handleTabClick(id, labelTitle) {
@@ -77,7 +76,7 @@ export default function HeroContents({ setHovered }) {
   }
 
   function handleSelectedTabClick(id) {
-    setSelectedTab(id);
+    setSelectedTab(designTabs.find((tab) => tab.id === id)?.id);
   }
 
   React.useEffect(() => {
@@ -98,6 +97,7 @@ export default function HeroContents({ setHovered }) {
     setClicked,
     handleTabClick,
     labelName,
+    setLabelName,
     selectedTab,
     setSelectedTab,
     handleSelectedTabClick,

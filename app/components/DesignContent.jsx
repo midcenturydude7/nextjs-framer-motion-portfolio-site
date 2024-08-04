@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import TabNav from "./TabNav";
+import DesignTabs from "./DesignTabs";
 import { designTabs } from "../lib/codeTabs";
 
 export default function DesignContent({
