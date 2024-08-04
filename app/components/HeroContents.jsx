@@ -2,6 +2,7 @@
 import React from "react";
 import { heroTabs } from "../lib/heroTabs";
 import { heroContents } from "../lib/heroContentData";
+import { designTabs, codeItems } from "../lib/codeTabs";
 import { cn } from "../lib/utils";
 
 export default function HeroContents({ setHovered }) {
@@ -10,35 +11,78 @@ export default function HeroContents({ setHovered }) {
   const [leftClick, setLeftClick] = React.useState(false);
   const [rightClick, setRightClick] = React.useState(false);
   const [activeTab, setActiveTab] = React.useState(null);
+  const [selectedTab, setSelectedTab] = React.useState(null);
+  const [labelName, setLabelName] = React.useState("");
 
-  function handleTabClick(id) {
+  function handleTabClick(id, labelTitle) {
+    const heroContent = heroContents({
+      setLeftClick,
+      setRightClick,
+      setActiveTab,
+      setLabelName,
+      setClicked,
+      setSelectedTab,
+      selectedTab,
+    });
+
+    const currentLabel = heroTabs.find(
+      ({ label }) => label === labelTitle,
+    )?.label;
+
     setActiveTab(id);
+    setLabelName(currentLabel);
     setClicked(true);
     setLeftClick(false);
     setRightClick(false);
+    setSelectedTab(1);
   }
 
   function handleLeftArrowClick(tabName) {
     const heroContent = heroContents({
       setLeftClick,
       setActiveTab,
+      setLabelName,
+      setSelectedTab,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
-    setLeftClick(true);
+
+    const currentLabel = heroTabs.find(({ id }) => id === newTab)?.label;
+    setLabelName(currentLabel);
+    setLeftClick(false);
+    setSelectedTab(1);
+
+    console.log("Left arrow clicked:", tabName, newTab, labelName);
   }
 
   function handleRightArrowClick(tabName) {
     const heroContent = heroContents({
       setRightClick,
       setActiveTab,
+      setLabelName,
+      setSelectedTab,
     });
 
     const newTab = heroContent.find(({ label }) => label === tabName)?.id;
     setActiveTab(newTab);
-    setRightClick(true);
+
+    const currentLabel = heroTabs.find(({ id }) => id === newTab)?.label;
+    setLabelName(currentLabel);
+    setRightClick(false);
+    setSelectedTab(1);
+
+    console.log("Right arrow clicked:", tabName, newTab, labelName);
   }
+
+  function handleSelectedTabClick(id) {
+    setSelectedTab(designTabs.find((tab) => tab.id === id)?.id);
+  }
+
+  React.useEffect(() => {
+    // console.log("Tab clicked:", labelName);
+    // console.log("Selected tab:", selectedTab);
+  }, [labelName, selectedTab, activeTab]);
 
   const heroContent = heroContents({
     clicked,
@@ -51,6 +95,12 @@ export default function HeroContents({ setHovered }) {
     activeTab,
     setActiveTab,
     setClicked,
+    handleTabClick,
+    labelName,
+    setLabelName,
+    selectedTab,
+    setSelectedTab,
+    handleSelectedTabClick,
   });
 
   return (
@@ -68,7 +118,7 @@ export default function HeroContents({ setHovered }) {
             onMouseLeave={() => {
               setSelected(null) && setClicked(false);
             }}
-            onClick={() => handleTabClick(id)}
+            onClick={() => handleTabClick(id, label)}
             className={cn(
               "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
               activeTab === id &&

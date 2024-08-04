@@ -5,15 +5,23 @@ import BuildContent from "../components/BuildContent";
 
 export function heroContents({
   clicked,
+  setClicked,
   leftClick,
   setLeftClick,
-  handleLeftArrowClick,
   rightClick,
   setRightClick,
+  handleTabClick,
+  handleLeftArrowClick,
   handleRightArrowClick,
   activeTab,
   setActiveTab,
-  setClicked,
+  labelName,
+  setLabelName,
+  selectedTab,
+  setSelectedTab,
+  handleSelectedTabClick,
+  activeNav,
+  setActiveNav,
 }) {
   return [
     {
@@ -24,11 +32,17 @@ export function heroContents({
           setClicked={setClicked}
           leftClick={leftClick}
           setLeftClick={setLeftClick}
-          handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           rightClick={rightClick}
           setRightClick={setRightClick}
+          handleTabClick={handleTabClick}
+          handleLeftArrowClick={() => handleLeftArrowClick("HomeContent")}
           handleRightArrowClick={() => handleRightArrowClick("CodeContent")}
           activeTab={activeTab}
+          labelName={labelName}
+          setLabelName={setLabelName}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+          handleSelectedTabClick={handleSelectedTabClick}
         />
       ),
     },
@@ -36,10 +50,21 @@ export function heroContents({
       label: "CodeContent",
       component: (
         <CodeContent
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
           clicked={clicked}
           setClicked={setClicked}
+          leftClick={leftClick}
+          setLeftClick={setLeftClick}
+          rightClick={rightClick}
+          setRightClick={setRightClick}
+          handleTabClick={handleTabClick}
+          handleLeftArrowClick={() => handleLeftArrowClick("DesignContent")}
+          handleRightArrowClick={() => handleRightArrowClick("BuildContent")}
+          activeTab={activeTab}
+          labelName={labelName}
+          setLabelName={setLabelName}
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+          handleSelectedTabClick={handleSelectedTabClick}
         />
       ),
     },
@@ -50,7 +75,6 @@ export function heroContents({
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           clicked={clicked}
-          setClicked={setClicked}
         />
       ),
     },
@@ -61,7 +85,6 @@ export function heroContents({
           activeTab={activeTab}
           setActiveTab={setActiveTab}
           clicked={clicked}
-          setClicked={setClicked}
         />
       ),
     },

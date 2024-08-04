@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CodeTailwindcss() {
+export default function DesignAnimations() {
   return (
     <div className="flex flex-col gap-4 px-4 py-6">
       <p>
