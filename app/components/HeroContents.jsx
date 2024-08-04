@@ -76,7 +76,7 @@ export default function HeroContents({ setHovered }) {
   }
 
   function handleSelectedTabClick(id) {
-    setSelectedTab(designTabs.find((tab) => tab.id === id)?.id);
+    setSelectedTab(id);
   }
 
   React.useEffect(() => {
