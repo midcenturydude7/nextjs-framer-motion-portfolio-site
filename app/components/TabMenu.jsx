@@ -1,5 +1,5 @@
 import DesignTabs from "./DesignTabs";
-import CodeDisciplines from "./CodeDisciplines";
+import CodeTabs from "./CodeTabs";
 import BuildTabs from "./BuildTabs";
 
 export default function TabMenu({
@@ -19,7 +19,7 @@ export default function TabMenu({
         />
       ) : null}
       {selectedTab && clicked && labelName === "Code" ? (
-        <CodeDisciplines
+        <CodeTabs
           handleTabClick={handleTabClick}
           handleSelectedTabClick={handleSelectedTabClick}
           selectedTab={selectedTab}

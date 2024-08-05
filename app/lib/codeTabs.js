@@ -23,7 +23,7 @@ export const designTabs = [
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
 
-export const codeItems = [
+export const codeTabs = [
   {
     label: "Nextjs",
     component: <CodeFrameworks />,

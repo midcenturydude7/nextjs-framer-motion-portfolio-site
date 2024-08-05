@@ -1,5 +1,5 @@
 import TabNav from "./TabNav";
-import { codeItems } from "../lib/codeTabs";
+import { codeTabs } from "../lib/codeTabs";
 
 export default function CodeContent({
   activeTab,
@@ -25,7 +25,7 @@ export default function CodeContent({
       />
       <main>
         {selectedTab && (
-          <div>{codeItems.find(({ id }) => id === selectedTab)?.component}</div>
+          <div>{codeTabs.find(({ id }) => id === selectedTab)?.component}</div>
         )}
       </main>
     </div>

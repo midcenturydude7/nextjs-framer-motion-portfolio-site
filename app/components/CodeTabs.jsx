@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { codeItems } from "../lib/codeTabs";
+import { codeTabs } from "../lib/codeTabs";
 
 export default function CodeTabs({ handleSelectedTabClick, selectedTab }) {
   return (
     <>
-      {codeItems.map(({ label, id }) => (
+      {codeTabs.map(({ label, id }) => (
         <li key={id}>
           <motion.button
             onClick={() => handleSelectedTabClick(id)}
