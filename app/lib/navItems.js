@@ -1,8 +1,8 @@
-import HomeSVG from "../components/HomeSVG";
-import AboutSVG from "../components/AboutSVG";
-import ContactSVG from "../components/ContactSVG";
-import WorkSVG from "../components/WorkSVG";
-import CloudSVG from "../components/CloudSVG";
+import HomeSVG from "../components/Home/Header/Navbar/HomeSVG";
+import AboutSVG from "../components/Home/Header/Navbar/AboutSVG";
+import ContactSVG from "../components/Home/Header/Navbar/ContactSVG";
+import WorkSVG from "../components/Home/Header/Navbar/WorkSVG";
+import CloudSVG from "../components/Home/Header/Navbar/CloudSVG";
 
 export const navItems = [
   {
