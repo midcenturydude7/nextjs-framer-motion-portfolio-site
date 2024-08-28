@@ -105,21 +105,20 @@ export default function HeroContents({ setHovered }) {
             }}
             onClick={() => handleTabClick(id, label)}
             className={cn(
-              "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15",
+              "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 group-hover:text-sky-300/50",
               activeTab === id &&
                 clicked &&
                 (leftClick === false || rightClick === false)
                 ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
-                : null,
+                : "",
             )}
           >
             <div
               className={cn(
-                "flex items-end justify-between",
-                label === "Design" ? "w-[6.9rem]" : "w-[6rem]",
+                "flex items-end justify-between space-x-4",
                 activeTab === id
                   ? "text-sky-300/50"
-                  : "group:hover:text-sky-300/50",
+                  : "group-hover:text-sky-300/50",
               )}
             >
               <span

@@ -1,6 +1,6 @@
 export default function DesignSVG() {
   return (
-    <div className="transition-colors duration-1000 ease-in-out group-hover:text-indigo-200/70 group-hover:transition-colors group-hover:duration-1000 group-hover:ease-in-out">
+    <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
