@@ -109,7 +109,7 @@ export default function HeroContents({ setHovered }) {
               activeTab === id &&
                 clicked &&
                 (leftClick === false || rightClick === false)
-                ? "bg-gradient-to-r from-indigo-950/15 to-transparent hover:cursor-default"
+                ? "bg-gradient-to-r from-indigo-950/15 to-transparent transition duration-1000 hover:cursor-default"
                 : "",
             )}
           >
