@@ -1,4 +1,4 @@
-import HomeWrapper from "./components/HomeWrapper";
+import HomeWrapper from "./components/Home/HomeWrapper";
 
 export default function Home() {
   return (

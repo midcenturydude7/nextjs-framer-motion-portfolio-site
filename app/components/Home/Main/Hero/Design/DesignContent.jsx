@@ -1,9 +1,10 @@
-import TabNav from "./TabNav";
-import { codeTabs } from "../lib/codeTabs";
+import TabNav from "../TabNav";
+import { designTabs } from "../../../../../lib/codeTabs";
 
-export default function CodeContent({
+export default function DesignContent({
   activeTab,
   setActiveTab,
+  handleTabClick,
   handleLeftArrowClick,
   handleRightArrowClick,
   clicked,
@@ -17,6 +18,7 @@ export default function CodeContent({
         clicked={clicked}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        handleTabClick={handleTabClick}
         handleLeftArrowClick={handleLeftArrowClick}
         handleRightArrowClick={handleRightArrowClick}
         selectedTab={selectedTab}
@@ -25,7 +27,9 @@ export default function CodeContent({
       />
       <main>
         {selectedTab && (
-          <div>{codeTabs.find(({ id }) => id === selectedTab)?.component}</div>
+          <div>
+            {designTabs.find(({ id }) => id === selectedTab)?.component}
+          </div>
         )}
       </main>
     </div>

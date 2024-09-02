@@ -1,12 +1,12 @@
-import DesignTailwindcss from "../components/DesignTailwindcss";
-import DesignAnimations from "../components/DesignAnimations";
-import DesignTools from "../components/DesignTools";
-import CodeFrameworks from "../components/CodeFrameworks";
-import CodeJavascript from "../components/CodeJavascript";
-import CodeDataStructures from "../components/CodeDataStructures";
-import BuildFullStack from "../components/BuildFullStack";
-import BuildAiMl from "../components/BuildAiMl";
-import BuildDataViz from "../components/BuildDataViz";
+import DesignTailwindcss from "../components/Home/Main/Hero/Design/DesignTailwindcss";
+import DesignAnimations from "../components/Home/Main/Hero/Design/DesignAnimations";
+import DesignTools from "../components/Home/Main/Hero/Design/DesignTools";
+import CodeFrameworks from "../components/Home/Main/Hero/Code/CodeFrameworks";
+import CodeJavascript from "../components/Home/Main/Hero/Code/CodeJavascript";
+import CodeDataStructures from "../components/Home/Main/Hero/Code/CodeDataStructures";
+import BuildFullStack from "../components/Home/Main/Hero/Build/BuildFullStack";
+import BuildAiMl from "../components/Home/Main/Hero/Build/BuildAiMl";
+import BuildDataViz from "../components/Home/Main/Hero/Build/BuildDataViz";
 
 export const designTabs = [
   {
@@ -36,7 +36,7 @@ export const codeTabs = [
     label: "Javascript",
     component: <CodeDataStructures />,
   },
-].map((n, idx) => ({ ...n, id: idx + 1 }));;
+].map((n, idx) => ({ ...n, id: idx + 1 }));
 
 export const buildTabs = [
   {

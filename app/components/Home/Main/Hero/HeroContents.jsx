@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { heroTabs } from "../lib/heroTabs";
-import { heroContents } from "../lib/heroContentData";
-import { cn } from "../lib/utils";
+import { heroTabs } from "../../../../lib/heroTabs";
+import { heroContents } from "../../../../lib/heroContentData";
+import { cn } from "../../../../lib/utils";
 
 export default function HeroContents({ setHovered }) {
   const [selected, setSelected] = React.useState(null);

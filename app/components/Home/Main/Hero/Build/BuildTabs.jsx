@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { designTabs } from "../lib/codeTabs";
+import { buildTabs } from "../../../../../lib/codeTabs";
 
 export default function DesignTabs({ handleSelectedTabClick, selectedTab }) {
   return (
     <>
-      {designTabs.map(({ label, id }) => (
+      {buildTabs.map(({ label, id }) => (
         <li key={id}>
           <motion.button
             onClick={() => handleSelectedTabClick(id)}

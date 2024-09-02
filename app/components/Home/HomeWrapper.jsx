@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import HeroContents from "./HeroContents";
-import { cn } from "../lib/utils";
+import HeroContents from "./Main/Hero/HeroContents";
+import { cn } from "../../lib/utils";
 
 export default function HomeWrapper() {
   const [hovered, setHovered] = React.useState(false);

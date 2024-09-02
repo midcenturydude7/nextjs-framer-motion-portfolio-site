@@ -1,6 +1,6 @@
-import DesignTabs from "./DesignTabs";
-import CodeTabs from "./CodeTabs";
-import BuildTabs from "./BuildTabs";
+import DesignTabs from "./Design/DesignTabs";
+import CodeTabs from "./Code/CodeTabs";
+import BuildTabs from "./Build/BuildTabs";
 
 export default function TabMenu({
   handleSelectedTabClick,

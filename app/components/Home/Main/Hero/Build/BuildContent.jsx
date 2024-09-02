@@ -1,6 +1,6 @@
 import React from "react";
-import TabNav from "./TabNav";
-import { buildTabs } from "../lib/codeTabs";
+import TabNav from "../TabNav";
+import { buildTabs } from "../../../../../lib/codeTabs";
 
 export default function BuildContent({
   activeTab,

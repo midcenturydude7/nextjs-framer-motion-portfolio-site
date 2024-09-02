@@ -1,7 +1,7 @@
-import DesignSVG from "../components/DesignSVG";
-import CodeSVG from "../components/CodeSVG";
-import BuildSVG from "../components/BuildSVG";
-import ArrowSVG from "../components/ArrowSVG";
+import DesignSVG from "../components/Home/Main/Hero/Design/DesignSVG";
+import CodeSVG from "../components/Home/Main/Hero/Code/CodeSVG";
+import BuildSVG from "../components/Home/Main/Hero/Build/BuildSVG";
+import ArrowSVG from "../components/Home/Main/Hero/ArrowSVG";
 
 export const heroTabs = [
   {

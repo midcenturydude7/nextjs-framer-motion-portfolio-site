@@ -1,7 +1,7 @@
-import HomeContent from "../components/HomeContent";
-import DesignContent from "../components/DesignContent";
-import CodeContent from "../components/CodeContent";
-import BuildContent from "../components/BuildContent";
+import HomeContent from "../components/Home/HomeContent";
+import DesignContent from "../components/Home/Main/Hero/Design/DesignContent";
+import CodeContent from "../components/Home/Main/Hero/Code/CodeContent";
+import BuildContent from "../components/Home/Main/Hero/Build/BuildContent";
 
 export function heroContents({
   clicked,
