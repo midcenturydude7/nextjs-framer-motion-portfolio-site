@@ -41,8 +41,6 @@ export default function HeroContents({ setHovered }) {
     setLabelName(currentLabel);
     setLeftClick(false);
     setSelectedTab(1);
-
-    console.log("Left arrow clicked:", tabName, newTab, labelName);
   }
 
   function handleRightArrowClick(tabName) {
