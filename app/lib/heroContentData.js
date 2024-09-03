@@ -1,11 +1,10 @@
-import HomeContent from "../components/Home/HomeContent";
+import HomeContent from "../components/Home/Main/Hero/HomeContent";
 import DesignContent from "../components/Home/Main/Hero/Design/DesignContent";
 import CodeContent from "../components/Home/Main/Hero/Code/CodeContent";
 import BuildContent from "../components/Home/Main/Hero/Build/BuildContent";
 
 export function heroContents({
   clicked,
-  setClicked,
   leftClick,
   setLeftClick,
   rightClick,
