@@ -154,7 +154,7 @@ export default function HeroContents({ setHovered }) {
               )}
               <div
                 className={cn(
-                  "opacity-10 transition delay-500 duration-1000 group-hover:text-sky-300/50 group-hover:opacity-100",
+                  "hidden opacity-10 transition delay-500 duration-1000 group-hover:text-sky-300/50 group-hover:opacity-100 lg:flex",
                   activeTab === id
                     ? "opacity-0 transition delay-500 group-hover:opacity-0"
                     : null,
