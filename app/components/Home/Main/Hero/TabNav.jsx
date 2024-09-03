@@ -13,7 +13,7 @@ export default function TabNav({
   labelName,
 }) {
   return (
-    <nav className="flex items-center justify-between pt-[6.075rem]">
+    <nav className="flex items-center justify-between gap-4 pt-[6.075rem]">
       <ButtonLeftArrow handleLeftArrowClick={handleLeftArrowClick} />
       <TabMenu
         handleSelectedTabClick={handleSelectedTabClick}

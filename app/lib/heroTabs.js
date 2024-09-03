@@ -20,6 +20,6 @@ export const heroTabs = [
     svgIcon: <BuildSVG />,
     svgArrow: <ArrowSVG />,
     label: "Build",
-    tag: "Frontend Engineer",
+    tag: "Frontend Dev",
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
