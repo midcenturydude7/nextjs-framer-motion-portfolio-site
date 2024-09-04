@@ -103,7 +103,7 @@ export default function HeroContents({ setHovered }) {
             }}
             onClick={() => handleTabClick(id, label)}
             className={cn(
-              "group relative flex flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 group-hover:text-sky-300/50",
+              "group relative flex max-h-28 min-h-16 flex-1 items-center justify-between rounded-bl-lg rounded-tl-lg border-l-[1px] border-t-[1px] border-slate-50/5 bg-gradient-to-r from-slate-900/90 to-transparent pl-8 transition duration-1000 hover:cursor-pointer hover:bg-gradient-to-r hover:from-indigo-950/15 group-hover:text-sky-300/50",
               activeTab === id &&
                 clicked &&
                 (leftClick === false || rightClick === false)
@@ -137,13 +137,13 @@ export default function HeroContents({ setHovered }) {
             </div>
             <div className="flex w-[fit-content] items-center justify-between">
               {selected === id ? (
-                <span className="3xl:flex mr-4 hidden rounded-lg border border-slate-200/10 px-[0.7rem] py-[0.35rem] transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-200/10 group-hover:from-10% group-hover:to-indigo-800/15 group-hover:to-95% group-hover:text-sky-300/50">
+                <span className="mr-4 hidden rounded-lg border border-slate-200/10 px-[0.7rem] py-[0.35rem] transition duration-1000 group-hover:bg-gradient-to-r group-hover:from-sky-200/10 group-hover:from-10% group-hover:to-indigo-800/15 group-hover:to-95% group-hover:text-sky-300/50 3xl:flex">
                   {tag}
                 </span>
               ) : (
                 <span
                   className={cn(
-                    "3xl:flex mr-4 hidden rounded-lg border border-slate-200/10 px-[0.7rem] py-[0.35rem] opacity-20 transition duration-1000",
+                    "mr-4 hidden rounded-lg border border-slate-200/10 px-[0.7rem] py-[0.35rem] opacity-20 transition duration-1000 3xl:flex",
                     activeTab === id
                       ? "bg-gradient-to-r from-sky-200/10 from-10% to-indigo-800/15 to-95% text-sky-300/50 opacity-100 transition duration-1000"
                       : "",
