@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import HeroContents from "./Main/Hero/HeroContents";
+import ProjectsContent from "./Main/Projects/ProjectsContent";
 import { cn } from "../../lib/utils";
 
 export default function HomeWrapper() {
@@ -27,19 +28,7 @@ export default function HomeWrapper() {
       <HeroContents setHovered={setHovered} />
 
       {/* MAIN CONTENT: PROJECTS SECTION */}
-      <div className="mt-16 w-[45%]">
-        <div className="flex flex-wrap justify-between text-[1.2rem] gap-8 text-sky-100/50">
-          <div className="flex h-[300px] w-[30%] min-w-72 flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
-            <h1>Project 1</h1>
-          </div>
-          <div className="flex h-[300px] w-[30%] min-w-72 flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
-            <h1>Project 2</h1>
-          </div>
-          <div className="flex h-[300px] w-[30%] min-w-72 flex-1 items-start justify-start rounded-lg border-t-[1px] border-slate-50/15 bg-gradient-to-b from-slate-900/90 to-transparent pl-6 pt-6">
-            <h1>Project 3</h1>
-          </div>
-        </div>
-      </div>
+      <ProjectsContent />
     </div>
   );
 }
