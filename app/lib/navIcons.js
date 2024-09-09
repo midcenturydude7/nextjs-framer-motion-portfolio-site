@@ -12,16 +12,16 @@ export const navIcons = [
     icon: FaGithubAlt,
     url: "https://github.com/midcenturydude7",
   },
-  {
-    label: "codepen",
-    icon: FaCodepen,
-    url: "https://github.com/midcenturydude7",
-  },
-  {
-    label: "codesandbox",
-    icon: FiCodesandbox,
-    url: "https://github.com/midcenturydude7",
-  },
+  // {
+  //   label: "codepen",
+  //   icon: FaCodepen,
+  //   url: "https://github.com/midcenturydude7",
+  // },
+  // {
+  //   label: "codesandbox",
+  //   icon: FiCodesandbox,
+  //   url: "https://github.com/midcenturydude7",
+  // },
   {
     label: "twitterX",
     icon: FaXTwitter,

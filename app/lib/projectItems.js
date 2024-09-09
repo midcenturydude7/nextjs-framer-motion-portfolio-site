@@ -3,9 +3,9 @@ export const projectItems = [
     label: "Login Page",
   },
   {
-    label: "Data Visualization",
+    label: "AI Application",
   },
   {
-    label: "AI Application",
+    label: "Data Visualization",
   },
 ].map((n, idx) => ({ ...n, id: idx + 1 }));
