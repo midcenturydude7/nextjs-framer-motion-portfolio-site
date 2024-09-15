@@ -10,7 +10,7 @@ export default function Icons() {
   return (
     <nav
       onPointerLeave={() => setCircle(null)}
-      className="group relative hidden xl:block"
+      className="group relative hidden lg:block"
     >
       <div className="absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-sky-500/80 from-20% via-fuchsia-700/70 via-60% to-indigo-700/90 to-80% opacity-50 blur transition duration-1000 group-hover:opacity-100" />
       <div className="relative flex gap-3 rounded-lg border border-transparent bg-zinc-900/80 px-[1.25rem] py-[0.475rem] leading-none transition-colors duration-1000 hover:border hover:border-zinc-100/30 hover:bg-black/80">
