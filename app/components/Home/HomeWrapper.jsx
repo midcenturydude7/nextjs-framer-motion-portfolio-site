@@ -8,7 +8,7 @@ export default function HomeWrapper() {
   const [hovered, setHovered] = React.useState(false);
 
   return (
-    <div className="relative flex h-lvh flex-col items-center justify-start p-24">
+    <div className="relative flex h-lvh flex-col items-center justify-start space-y-20">
       {/* ANIMATED SHAPES | TODO: CREATE COMPONENT FOR SCREEN READERS TO IGNORE */}
       <div className="absolute left-[63%] top-28 z-[-2] h-60 w-36 -rotate-45 rounded-xl bg-gradient-to-r from-slate-200/80 from-10% via-purple-900/90 via-50% to-fuchsia-700/70 to-90% opacity-30 blur-3xl" />
       {/* BACKGROUND ANIMATION */}

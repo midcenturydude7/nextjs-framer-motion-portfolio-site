@@ -87,8 +87,8 @@ export default function HeroContents({ setHovered }) {
   });
 
   return (
-    <div className="flex h-[33%] w-[45%] text-sky-100/50">
-      <div className="flex w-[45%] flex-col gap-[1.2rem] text-[1.2rem]">
+    <div className="flex h-[33%] w-[45%] justify-center text-sky-100/50 space-x-10">
+      <div className="flex w-[45%] flex-col space-y-4 text-[1.2rem]">
         {/* TABS: DESIGN, CODE, BUILD */}
         {heroTabs.map(({ id, svgIcon, svgArrow, label, tag }) => (
           <div
@@ -166,7 +166,7 @@ export default function HeroContents({ setHovered }) {
           </div>
         ))}
       </div>
-      <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent pl-[4rem]">
+      <div className="mt-[-4rem] flex w-[55%] flex-1 flex-col items-start justify-start bg-transparent">
         {/* HELLO SECTION */}
         {clicked && activeTab ? (
           <div>{heroContent.find(({ id }) => id === activeTab)?.component}</div>
