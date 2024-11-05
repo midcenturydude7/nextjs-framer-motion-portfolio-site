@@ -1,5 +1,3 @@
-const { transform } = require("next/dist/build/swc");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,9 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-          screens: {
-      "3xl": "1750px",
-    },
+      screens: {
+        "3xl": "1750px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

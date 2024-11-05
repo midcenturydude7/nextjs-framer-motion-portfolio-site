@@ -1,6 +1,6 @@
 import Menu from "./Navbar/Menu";
 import Icons from "./IconMenu/Icons";
-import Logo from "./Logo/Logo";
+// import Logo from "./Logo/Logo";
 
 export default function Header() {
   return (
