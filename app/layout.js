@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/rgm1dlw.css" />
       </head>
-      <body className="overflow-hidden bg-slate-900 font-[sofia-pro,_sans-serif] font-medium not-italic antialiased">
+      <body className="bg-slate-900 font-[sofia-pro,_sans-serif] font-medium not-italic antialiased">
         <Header />
         {children}
       </body>
