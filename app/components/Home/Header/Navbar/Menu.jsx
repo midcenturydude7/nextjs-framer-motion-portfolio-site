@@ -9,7 +9,10 @@ export default function Menu() {
   const [focused, setFocused] = React.useState(null);
 
   return (
-    <nav onPointerLeave={() => setFocused(null)} className="group relative">
+    <nav
+      onPointerLeave={() => setFocused(null)}
+      className="group relative mx-auto"
+    >
       <div className="from-200% absolute -inset-0.5 animate-tilt rounded-lg bg-gradient-to-r from-sky-500/80 via-fuchsia-700/70 via-60% to-indigo-700/90 to-80% opacity-50 blur transition duration-1000 group-hover:opacity-100" />
 
       <MenuButton

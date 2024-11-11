@@ -4,7 +4,7 @@ import {
   FaXTwitter,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import { FiCodesandbox } from "react-icons/fi";
+// import { FiCodesandbox } from "react-icons/fi";
 
 export const navIcons = [
   {

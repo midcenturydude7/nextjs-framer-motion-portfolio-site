@@ -10,7 +10,7 @@ export default function TabMenu({
   handleTabClick,
 }) {
   return (
-    <ul className="flex items-center justify-between gap-[3.75rem] border-b border-slate-200/10 text-[1.175rem]">
+    <ul className="flex items-center justify-between space-x-6 3xl:space-x-20 text-nowrap border-b border-slate-200/10 text-[1.175rem]">
       {selectedTab && clicked && labelName === "Design" ? (
         <DesignTabs
           handleTabClick={handleTabClick}
